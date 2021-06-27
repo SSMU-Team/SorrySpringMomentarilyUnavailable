@@ -1,0 +1,46 @@
+name: Acquire activation file
+
+on:
+  push:
+    branches:
+     - 'request_licence'
+
+jobs:
+  activation:
+    name: Request manual activation file
+    runs-on: ubuntu-latest
+    steps:
+      # Checkout
+      - uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+          lfs: true
+      # Check Unity version
+      - name: Read ProjectSettings/ProjectVersion.txt
+        id: file
+        uses: juliangruber/read-file-action@v1
+        with:
+          path: ./ProjectSettings/ProjectVersion.txt
+      - uses: actions-ecosystem/action-regex-match@v2
+        id: regex-match
+        with:
+          text: ${{ steps.file.outputs.content }}
+          regex: '\d*\.\d*\..*'
+      - name: Check version
+        if: steps.regex-match.outputs.match == ''
+        run: echo 'No version found, Unity project corrupted.' && exit 1
+      - run: echo ${{ steps.regex-match.outputs.match }}
+      # Request
+      - name: Unity - Request Activation File
+        id: getManualLicenseFile
+        uses: game-ci/unity-request-activation-file@v2.0-alpha-1
+        with:
+          unityVersion: ${{ steps.regex-match.outputs.match }}
+      # Upload artifact
+      - name: Expose as artifact
+        uses: actions/upload-artifact@v1
+        with:
+          name: ${{ steps.getManualLicenseFile.outputs.filePath }}
+          path: ${{ steps.getManualLicenseFile.outputs.filePath }}
+      # Instructions
+      - run: echo 'Instructions https://game.ci/docs/github/activation#converting-into-a-license'

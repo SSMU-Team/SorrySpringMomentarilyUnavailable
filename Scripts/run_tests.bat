@@ -1,0 +1,1 @@
+Unity.exe -batchmode -logFile test.log -projectPath ../ -runEditorTests -testResults tests-results.xml -testPlatform playmode editmode

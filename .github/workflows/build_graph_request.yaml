@@ -1,0 +1,105 @@
+name: Request Build Graph
+
+on: workflow_dispatch
+
+jobs:
+
+  tests:
+      name: Tests ${{ matrix.testMode }}
+      runs-on: ubuntu-latest
+      strategy:
+        fail-fast: false
+        matrix:
+          testMode:
+            - playmode
+            - editmode
+      steps:
+        # Checkout
+        - name: Checkout repository
+          uses: actions/checkout@v2
+          with:
+            fetch-depth: 0
+            lfs: true
+        # Cache
+        - uses: actions/cache@v2
+          with:
+            path: Library
+            key: Library-Test
+            restore-keys: Library-Test
+        # Test
+        - name: Run tests
+          uses: game-ci/unity-test-runner@v2
+          env:
+            UNITY_LICENSE: ${{ secrets.UNITY_LICENSE }}
+          with:
+            githubToken: ${{ secrets.GITHUB_TOKEN }}
+            testMode: ${{ matrix.testMode }}
+            artifactsPath: ${{ matrix.testMode }}-artifacts
+            checkName: Test Results ${{ matrix.testMode }}
+          id: test-out
+        # Output
+        - uses: actions/upload-artifact@v2
+          if: always()
+          with:
+            name: Test results for ${{ matrix.testMode }}
+            path: ${{ steps.test-out.outputs.artifactsPath }}
+
+  get-tag:
+    name: Get tag
+    runs-on: ubuntu-latest
+    needs: tests
+    outputs:
+      tag: ${{ steps.version.outputs.tag }}
+    steps: 
+      # Checkout
+      - name: Checkout repository
+        uses: actions/checkout@v2
+      # Tag fetch
+      - name: Tag fetch
+        uses: actions-ecosystem/action-get-latest-tag@v1
+        id: version
+
+  build:
+    name: Build
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        targetPlatform:
+          - StandaloneWindows64
+    needs: get-tag
+    steps:
+      # Checkout
+      - name: Checkout repository
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+          lfs: true
+      # Cache
+      - uses: actions/cache@v2
+        with:
+          path: |
+            Library
+            build
+            Build
+          key: Library
+          restore-keys: Library
+      # Build
+      - name: Build project
+        uses: game-ci/unity-builder@v2
+        env:
+          UNITY_LICENSE: ${{ secrets.UNITY_LICENSE }}
+        with:
+          targetPlatform: ${{ matrix.targetPlatform }}
+          allowDirtyBuild: true
+          buildMethod: Builder.BuildGraph
+      # Zip
+      - name: Zip build
+        run: |
+          pushd Build/Windows/SSMU_Graph/
+          zip -r ../../../Build-${{ matrix.targetPlatform }}-${{ needs.get-tag.outputs.tag }}.zip .
+          popd
+      # Output Zip
+      - uses: actions/upload-artifact@v2
+        with:
+          name: Build-${{ matrix.targetPlatform }}-${{ needs.get-tag.outputs.tag }}.zip
+          path: ./Build-${{ matrix.targetPlatform }}-${{ needs.get-tag.outputs.tag }}.zip

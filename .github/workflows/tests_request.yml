@@ -1,0 +1,72 @@
+name: Request Tests
+
+on: workflow_dispatch
+
+jobs:
+  test-edit:
+      name: Tests editmode
+      runs-on: ubuntu-latest
+      steps:
+        # Checkout
+        - name: Checkout repository
+          uses: actions/checkout@v2
+          with:
+            fetch-depth: 0
+            lfs: true
+        # Cache
+        - uses: actions/cache@v2
+          with:
+            path: Library
+            key: Library-Test
+            restore-keys: Library-Test
+        # Test
+        - name: Run tests
+          uses: game-ci/unity-test-runner@v2
+          env:
+            UNITY_LICENSE: ${{ secrets.UNITY_LICENSE }}
+          with:
+            githubToken: ${{ secrets.GITHUB_TOKEN }}
+            testMode: editmode
+            artifactsPath: editmode-artifacts
+            checkName: Test Results editmode
+          id: test-edit
+        # Output
+        - uses: actions/upload-artifact@v2
+          if: always()
+          with:
+            name: Test results for editmode
+            path: ${{ steps.test-edit.outputs.artifactsPath }}
+
+  test-play:
+      name: Tests playmode
+      runs-on: ubuntu-latest
+      steps:
+        # Checkout
+        - name: Checkout repository
+          uses: actions/checkout@v2
+          with:
+            fetch-depth: 0
+            lfs: true
+        # Cache
+        - uses: actions/cache@v2
+          with:
+            path: Library
+            key: Library-Test
+            restore-keys: Library-Test
+        # Test
+        - name: Run tests
+          uses: game-ci/unity-test-runner@v2
+          env:
+            UNITY_LICENSE: ${{ secrets.UNITY_LICENSE }}
+          with:
+            githubToken: ${{ secrets.GITHUB_TOKEN }}
+            testMode: playmode
+            artifactsPath: playmode-artifacts
+            checkName: Test Results playmode
+          id: test-play
+        # Output
+        - uses: actions/upload-artifact@v2
+          if: always()
+          with:
+            name: Test results for playmode
+            path: ${{ steps.test-play.outputs.artifactsPath }}

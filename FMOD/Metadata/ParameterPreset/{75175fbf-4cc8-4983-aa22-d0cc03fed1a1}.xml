@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.01.00">
+	<object class="ParameterPreset" id="{75175fbf-4cc8-4983-aa22-d0cc03fed1a1}">
+		<property name="name">
+			<value>IsInSpring</value>
+		</property>
+		<relationship name="folder">
+			<destination>{2627fae8-d34d-43eb-9148-f679d9fd89b0}</destination>
+		</relationship>
+		<relationship name="parameter">
+			<destination>{5f17b3f5-356c-44c9-804f-64b9600f23e8}</destination>
+		</relationship>
+	</object>
+	<object class="GameParameter" id="{5f17b3f5-356c-44c9-804f-64b9600f23e8}">
+		<property name="parameterType">
+			<value>1</value>
+		</property>
+		<property name="maximum">
+			<value>2</value>
+		</property>
+		<property name="initialValue">
+			<value>0</value>
+		</property>
+	</object>
+</objects>

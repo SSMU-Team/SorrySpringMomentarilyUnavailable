@@ -1,0 +1,45 @@
+using System.Collections.Generic;
+using UnityEngine;
+
+namespace CustomEvents
+{
+     public delegate void #SCRIPTNAME#Callback(#TYPE# param);
+
+    [CreateAssetMenu(fileName = "#SCRIPTNAME#", menuName = "Events/#SCRIPTNAME#")]
+    public class #SCRIPTNAME# : ScriptableEvent
+    {
+        private #SCRIPTNAME#Callback m_call;
+
+        public void AddListener(#SCRIPTNAME#Listener listener)
+        {
+            m_call += listener.OnEventInvoke;
+        }
+
+        public void AddListener(#SCRIPTNAME#Callback listener)
+        {
+            m_call += listener;
+        }
+
+        public void Invoke(#TYPE# param)
+        {
+            if (m_call != null)
+            {
+                m_call(param);
+            }
+            else
+            {
+                Debug.LogWarning("No event registered on " + name);
+            }
+        }
+
+        public void RemoveListener(#SCRIPTNAME#Listener listener)
+        {
+            m_call -= listener.OnEventInvoke;
+        }
+
+        public void RemoveListener(#SCRIPTNAME#Callback listener)
+        {
+            m_call -= listener;
+        }
+    }
+}

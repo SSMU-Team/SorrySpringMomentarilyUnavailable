@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.01.00">
+	<object class="AudioFile" id="{939ac116-5133-4aaa-bd11-74dc44340c82}">
+		<property name="assetPath">
+			<value>Japanese Music - Snow.mp3</value>
+		</property>
+		<property name="isStreaming">
+			<value>true</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>513.30612244897964</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{2310fe71-57a7-4c0b-a9ff-9d953e31aeb7}</destination>
+		</relationship>
+	</object>
+</objects>

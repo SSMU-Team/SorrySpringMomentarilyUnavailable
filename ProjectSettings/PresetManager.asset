@@ -1,0 +1,71 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1386491679 &1
+PresetManager:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_DefaultPresets:
+  - first:
+      m_NativeTypeID: 1020
+      m_ManagedTypePPtr: {fileID: 0}
+      m_ManagedTypeFallback: 
+    second:
+    - m_Preset: {fileID: 2655988077585873504, guid: e18fd6ecd9cdb524ca99844f39b9d9ac,
+        type: 2}
+      m_Filter: '*.wav'
+      m_Disabled: 0
+    - m_Preset: {fileID: 2655988077585873504, guid: 5e966bcba43d03a4a89a1385e398858f,
+        type: 2}
+      m_Filter: '*.mp3'
+      m_Disabled: 0
+  - first:
+      m_NativeTypeID: 1006
+      m_ManagedTypePPtr: {fileID: 0}
+      m_ManagedTypeFallback: 
+    second:
+    - m_Preset: {fileID: 2655988077585873504, guid: 7a99f8aa944efe94cb9bd74562b7d5f9,
+        type: 2}
+      m_Filter: glob:"*[Aa]lbedo*.(png|jpg)"
+      m_Disabled: 0
+    - m_Preset: {fileID: 2655988077585873504, guid: 7a99f8aa944efe94cb9bd74562b7d5f9,
+        type: 2}
+      m_Filter: glob:"*[Bb]ase[Cc]olor*.(png|jpg)"
+      m_Disabled: 0
+    - m_Preset: {fileID: 2655988077585873504, guid: 1d826a4c23450f946b19c20560595a1f,
+        type: 2}
+      m_Filter: glob:"*[Nn]ormal*.(png|jpg)"
+      m_Disabled: 0
+    - m_Preset: {fileID: 2655988077585873504, guid: 9303d565bd8aa6948ba775e843320e4d,
+        type: 2}
+      m_Filter: glob:"*[Ss]prite*.(png|jpg)"
+      m_Disabled: 0
+    - m_Preset: {fileID: 2655988077585873504, guid: 9303d565bd8aa6948ba775e843320e4d,
+        type: 2}
+      m_Filter: glob:"*[Uu][Ii]*.(png|jpg)"
+      m_Disabled: 0
+  - first:
+      m_NativeTypeID: 108
+      m_ManagedTypePPtr: {fileID: 0}
+      m_ManagedTypeFallback: 
+    second:
+    - m_Preset: {fileID: 2655988077585873504, guid: c1cf8506f04ef2c4a88b64b6c4202eea,
+        type: 2}
+      m_Filter: 
+      m_Disabled: 0
+  - first:
+      m_NativeTypeID: 1041
+      m_ManagedTypePPtr: {fileID: 0}
+      m_ManagedTypeFallback: 
+    second:
+    - m_Preset: {fileID: 2655988077585873504, guid: 9c266cbbe2f5afe40a33cdc53836faaf,
+        type: 2}
+      m_Filter: glob:"*.(fbx|FBX)"
+      m_Disabled: 0
+    - m_Preset: {fileID: 2655988077585873504, guid: d62d4211c5dd3ec429bf585ab0e40653,
+        type: 2}
+      m_Filter: glob:"*[Cc]hara*.(fbx|FBX)"
+      m_Disabled: 0
+    - m_Preset: {fileID: 2655988077585873504, guid: c6cb4bf8e9f44364494ebfb3582c6125,
+        type: 2}
+      m_Filter: glob:"*[Tt]errain*.(fbx|FBX)"
+      m_Disabled: 0

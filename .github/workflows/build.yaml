@@ -1,0 +1,130 @@
+name: Build & Release
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+    types:
+      - closed
+
+jobs:
+  cancel-concurent-run:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Cancel Previous Runs
+        uses: styfle/cancel-workflow-action@0.9.0
+        with:
+          access_token: ${{ github.token }}
+
+  create-tag:
+    name: Create tag
+    runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/main' 
+    outputs:
+      tag: ${{ steps.version.outputs.new-tag }}
+    steps:
+       # Tag
+      - name: Tag creation
+        uses: phish108/autotag-action@1.1.37
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN}}
+          dry-run: "true"
+        id: version
+
+  build:
+    name: Build
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        targetPlatform:
+          - StandaloneWindows
+          - StandaloneWindows64
+          - StandaloneLinux64
+    outputs:
+      targetPlatform: ${{ matrix.targetPlatform }}
+    needs: [create-tag]
+    steps:
+      # Checkout
+      - name: Checkout repository
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+          lfs: true
+      # Cache
+      - uses: actions/cache@v2
+        with:
+          path: |
+            Library
+            build
+          key: Library
+          restore-keys: Library
+      # Build
+      - name: Build project
+        uses: game-ci/unity-builder@v2
+        env:
+          UNITY_LICENSE: ${{ secrets.UNITY_LICENSE }}
+        with:
+          targetPlatform: ${{ matrix.targetPlatform }}
+          allowDirtyBuild: true
+      # Zip
+      - name: Zip build
+        run: |
+          pushd build/${{ matrix.targetPlatform }}
+          zip -r ../../Build-${{ matrix.targetPlatform }}-${{ needs.create-tag.outputs.tag }}.zip .
+          popd
+      # Output Zip
+      - uses: actions/upload-artifact@v2
+        with:
+          name: Build-${{ matrix.targetPlatform }}-${{ needs.create-tag.outputs.tag }}.zip
+          path: ./Build-${{ matrix.targetPlatform }}-${{ needs.create-tag.outputs.tag }}.zip
+
+  create-release:
+    name: Release
+    runs-on: ubuntu-latest
+    needs: [create-tag, build]
+    outputs:
+      release_url: ${{ steps.release.outputs.upload_url }}
+    steps:
+      # Release
+      - name: Create Release
+        id: release
+        uses: actions/create-release@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          tag_name: ${{ needs.create-tag.outputs.tag }}
+          release_name: Release ${{ needs.create-tag.outputs.tag }}
+          draft: false
+          prerelease: false
+
+  upload-release:
+    name: Upload
+    runs-on: ubuntu-latest
+    needs: [build, create-release, create-tag]
+    strategy:
+      matrix:
+        targetPlatform:
+          - StandaloneWindows
+          - StandaloneWindows64
+          - StandaloneLinux64
+    steps:
+      # Load zip
+      - name: Load zip
+        uses: actions/download-artifact@v1
+        with:
+          name: Build-${{ matrix.targetPlatform }}-${{ needs.create-tag.outputs.tag }}.zip
+          path: ./
+      #Upload
+      - name: Upload Release Asset
+        id: upload-release-asset
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ needs.create-release.outputs.release_url }}
+          asset_path: ./Build-${{ matrix.targetPlatform }}-${{ needs.create-tag.outputs.tag }}.zip
+          asset_name: Build-${{ matrix.targetPlatform }}-${{ needs.create-tag.outputs.tag }}.zip
+          asset_content_type: application/zip
