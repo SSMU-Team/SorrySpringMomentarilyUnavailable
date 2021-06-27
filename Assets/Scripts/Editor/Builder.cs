@@ -23,7 +23,7 @@ public static class Builder
 	{
 		Debug.Log("### BUILDING ###");
 		UnityEditor.Build.Reporting.BuildReport report = BuildPipeline.BuildPlayer(
-			new[] { "Assets/Data/Scenes/Prototype 0.0.0.unity" },
+			new[] { "Assets/Data/Scenes/Proto-0.2.unity" },
 			"Build/Windows/SSMU/SSMU.exe",
 			BuildTarget.StandaloneWindows64,
 			BuildOptions.Development);
