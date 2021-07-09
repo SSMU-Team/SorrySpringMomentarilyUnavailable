@@ -17,7 +17,6 @@ public class ItemUI : MonoBehaviour
 		{
 			m_name.text = m_collectable.Name;
 			m_number.text = m_collectable.Number.ToString();
-			m_max.text = m_collectable.MaxNumber.ToString();
 		}
 	}
 }

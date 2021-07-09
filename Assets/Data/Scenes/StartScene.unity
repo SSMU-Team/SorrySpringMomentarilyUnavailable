@@ -190,6 +190,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Level Manager
       objectReference: {fileID: 0}
+    - target: {fileID: 7895282236174658773, guid: b60390a74d13d6d46b8eaa05832fb94a,
+        type: 3}
+      propertyPath: m_AdditionalShaderChannelsFlag
+      value: 25
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b60390a74d13d6d46b8eaa05832fb94a, type: 3}
 --- !u!1 &406527657

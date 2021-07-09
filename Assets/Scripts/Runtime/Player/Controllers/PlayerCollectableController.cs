@@ -20,6 +20,10 @@ public class PlayerCollectableController : MonoBehaviour
 	{
 		Collectable collectable = obj.GetComponent<Collectable>();
 		m_collectableStack.Add(collectable); 
+		if(collectable.IsAutoCollect)
+		{
+			OnInteraction();
+		}
 	}
 
 	public void OnTriggerFilteredExit(GameObject obj)

@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7618783032267869391}
   - component: {fileID: 7618783032267869376}
+  - component: {fileID: 8980174750581482938}
   m_Layer: 0
   m_Name: Menu Manager
   m_TagString: Untagged
@@ -49,3 +50,31 @@ MonoBehaviour:
     canBeOverrided: 0
   - m_menu: {fileID: 0}
     canBeOverrided: 1
+--- !u!114 &8980174750581482938
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7618783032267869377}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 962951155f13449468062b4718bf3410, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_event: {fileID: 11400000, guid: 116b382b2858b4240b4c04725d390ecd, type: 2}
+  m_func:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 7618783032267869376}
+        m_TargetAssemblyTypeName: MenuManager, Assembly-CSharp
+        m_MethodName: OnMenu
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2

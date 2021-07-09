@@ -13,8 +13,15 @@ public abstract class Menu : MonoBehaviour
 
 	public bool Enabled
 	{
-		get => m_canvas.enabled;
-		protected set => m_canvas.enabled = value;
+		get
+		{
+			return m_canvas.enabled;
+		}
+
+		protected set 
+		{
+			m_canvas.enabled = value;
+		} 
 	}
 	public MenuType Type => type;
 	

@@ -147,9 +147,9 @@ namespace SceneManagement
 		public IEnumerator BeginFadeScren()
 		{
 			m_transition.SetBool("Load", true);
-			yield return new WaitForSecondsRealtime(0.0f);
+			yield return new WaitForSecondsRealtime(1.0f);
 			m_camTransition.enabled = true;
-			yield return new WaitForSecondsRealtime(0.0f);
+			yield return new WaitForSecondsRealtime(0.5f);
 		}
 
 		/// <summary>
@@ -157,10 +157,10 @@ namespace SceneManagement
 		/// </summary>
 		public IEnumerator EndFadeScreen()
 		{
-			yield return new WaitForSecondsRealtime(0.0f);
+			yield return new WaitForSecondsRealtime(0.5f);
 			m_transition.SetBool("Load", false);
 			m_camTransition.enabled = false;
-			yield return new WaitForSecondsRealtime(0.0f);
+			yield return new WaitForSecondsRealtime(1.0f);
 		}
 
 		/// <summary>
@@ -169,10 +169,10 @@ namespace SceneManagement
 		/// <param name="level"> The level to load.</param>
 		private IEnumerator LoadLevel(Level level)
 		{
-			//if(m_loadingJobs.Count == 0)
-			//{
-			//	yield return BeginFadeScren();
-			//}
+			if(m_loadingJobs.Count == 0)
+			{
+				yield return BeginFadeScren();
+			}
 
 			m_isLoadingScreen = true;
 
@@ -183,7 +183,7 @@ namespace SceneManagement
 				yield return null;
 			}
 
-			//yield return EndFadeScreen();
+			yield return EndFadeScreen();
 			m_isLoadingScreen = false;
 			m_sceneReadyEvent.Invoke();
 		}

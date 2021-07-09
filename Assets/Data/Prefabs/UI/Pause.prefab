@@ -142,7 +142,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Quit
+  m_text: Main Menu
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -169,10 +169,10 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 72
-  m_fontSizeBase: 36
+  m_fontSize: 60
+  m_fontSizeBase: 60
   m_fontWeight: 400
-  m_enableAutoSizing: 1
+  m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
@@ -308,7 +308,7 @@ MonoBehaviour:
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 1920, y: 1080}
   m_ScreenMatchMode: 0
-  m_MatchWidthOrHeight: 0
+  m_MatchWidthOrHeight: 0.5
   m_PhysicalUnit: 3
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
@@ -330,7 +330,7 @@ MonoBehaviour:
   menuEvent: {fileID: 11400000, guid: 116b382b2858b4240b4c04725d390ecd, type: 2}
   type: 0
   m_pauseEvent: {fileID: 11400000, guid: 20405c0bc8d44e247adee6ed848a9fc5, type: 2}
-  m_inventory: {fileID: 0}
+  m_mainMenuEvent: {fileID: 11400000, guid: 81af2552c6c57a440865d75ccb94c859, type: 2}
 --- !u!114 &1473033357987582908
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -401,6 +401,10 @@ MonoBehaviour:
       m_Calls: []
     m_ActionId: fa87854b-a15a-4028-89e6-f0a13f604ff6
     m_ActionName: Player/Interaction[/Keyboard/e]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 27e2db88-8646-47de-bfd9-796baa816244
+    m_ActionName: Player/Inventory[/Keyboard/b]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player
@@ -529,7 +533,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1473033357987582906}
         m_TargetAssemblyTypeName: PauseController, Assembly-CSharp
-        m_MethodName: OnButtonQuit
+        m_MethodName: OnReturnMainMenu
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -819,7 +823,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1054160232266217994
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1285,8 +1289,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_collectable
       value: 
-      objectReference: {fileID: 11400000, guid: 522db7524347ffd43a46e37fa693759a,
-        type: 2}
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a06033c02ba603c44a30f85275e37030, type: 3}
 --- !u!224 &6677060104783558399 stripped

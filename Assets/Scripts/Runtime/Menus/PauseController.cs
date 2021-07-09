@@ -10,6 +10,7 @@ using static UnityEngine.InputSystem.InputAction;
 public class PauseController : Menu
 {
 	[SerializeField] private BoolEvent m_pauseEvent;
+	[SerializeField] private SimpleEvent m_mainMenuEvent;
 
 	private void Start()
 	{
@@ -50,8 +51,9 @@ public class PauseController : Menu
 		m_pauseEvent.Invoke(pauseStatus);
 	}
 
-	public void OnButtonQuit()
+	public void OnReturnMainMenu()
 	{
-		MenuUtilities.Quit();
+		Time.timeScale = 1;
+		m_mainMenuEvent.Invoke();
 	}
 }

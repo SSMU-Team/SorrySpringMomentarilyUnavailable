@@ -27,7 +27,6 @@ public class MenuData
 
 public class MenuManager : MonoBehaviour
 {
-	[SerializeField] private MenuTypeEvent m_menuEvent;
 	[SerializeField] private MenuData[] m_menus;
 
 	private MenuData m_currentMenu;
@@ -35,7 +34,6 @@ public class MenuManager : MonoBehaviour
 
 	private void Awake()
 	{
-		m_menuEvent.AddListener(OnMenu);
 		m_currentMenu = null;
 
 		m_menusDict = new Dictionary<MenuType, MenuData>();
@@ -45,7 +43,7 @@ public class MenuManager : MonoBehaviour
 		}
 	}
 
-	private void OnMenu(MenuType type)
+	public void OnMenu(MenuType type)
 	{
 		if(m_currentMenu == null) // Ouverture d'un 1er menu
 		{
