@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b4befa96a7027f340ab1427e1074b721, type: 3}
   m_Name: Task_0
   m_EditorClassIdentifier: 
-  m_description: "Bonjour, je suis une t\xE2che tutoriel"
+  m_description: "Nombre de carrote \xE0 ramasser"
   m_numberPerformed: 0
   m_numberPerformToDone: 94
   m_type: 0
-  m_state: 0
+  m_state: 1
   m_taskEvent: {fileID: 11400000, guid: e61da4337d3931f4c866c10db09a7f9e, type: 2}

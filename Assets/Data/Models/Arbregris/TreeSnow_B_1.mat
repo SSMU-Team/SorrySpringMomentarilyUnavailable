@@ -44,6 +44,10 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - Texture2D_1:
+        m_Texture: {fileID: 2800000, guid: 563a0d078399f014ca7975061d2879f1, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - Texture2D_57C0B680:
         m_Texture: {fileID: 2800000, guid: 9a4280731acff344f8a130b7861f1cde, type: 3}
         m_Scale: {x: 1, y: 1}
@@ -145,7 +149,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _Normals:
-        m_Texture: {fileID: 2800000, guid: 182b72bdeb119374780df307e73f29e6, type: 3}
+        m_Texture: {fileID: 2800000, guid: 4e55b136731a34440b8e048dd5d48c28, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _OcclusionMap:
@@ -288,6 +292,7 @@ Material:
     - _LinkDetailsWithBase: 1
     - _MaterialID: 1
     - _Metallic: 0.5
+    - _MetallicStrength: 1
     - _Mode: 0
     - _Noise1: 2
     - _Noise2: 80
@@ -312,6 +317,7 @@ Material:
     - _Smoothness: 0.5
     - _SmoothnessRemapMax: 1
     - _SmoothnessRemapMin: 0
+    - _SmoothnessStrength: 0
     - _SmoothnessTextureChannel: 0
     - _SnowHeightColor: 0
     - _SnowNoiseSaturation: 5

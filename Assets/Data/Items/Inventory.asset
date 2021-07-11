@@ -15,4 +15,3 @@ MonoBehaviour:
   m_collectables:
   - {fileID: 11400000, guid: 840199780e964a94dadf6a8d07c3bfd0, type: 2}
   - {fileID: 11400000, guid: 2b44af204f2894c49a10e5284de07479, type: 2}
-  - {fileID: 11400000, guid: 522db7524347ffd43a46e37fa693759a, type: 2}

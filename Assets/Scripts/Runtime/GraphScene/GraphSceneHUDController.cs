@@ -31,7 +31,7 @@ public class GraphSceneHUDController : MonoBehaviour
 
 	public void ChangeSeason(int season)
 	{
-		SpringController.Instance.SpringMode = (SpringSceneMode)(season);
+		SpringManager.Instance.SpringMode = (SpringSceneMode)(season);
 	}
 
 	public void ChangeView()
