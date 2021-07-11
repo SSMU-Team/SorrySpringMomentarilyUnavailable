@@ -3,17 +3,16 @@ using TMPro;
 
 using UnityEngine;
 
-public class HUDController : MonoBehaviour
+public class HUDController : Menu
 {
-	private Canvas m_hud;
 
-	private void Awake()
+	public override void OpenMenu()
 	{
-		m_hud = GetComponent<Canvas>();
+		Enabled = true;
 	}
 
-	public void OnPause(bool pause)
+	public override void CloseMenu()
 	{
-		m_hud.enabled = !pause;
+		Enabled = false;
 	}
 }

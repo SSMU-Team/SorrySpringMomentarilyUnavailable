@@ -112,3 +112,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2f5312f1884e7aa428615b4e84f34cbc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_canvas: {fileID: 4879105010181565845}
+  menuEvent: {fileID: 11400000, guid: 116b382b2858b4240b4c04725d390ecd, type: 2}
+  type: 0

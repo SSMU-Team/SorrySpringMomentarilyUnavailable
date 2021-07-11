@@ -39,7 +39,7 @@ public class MusicController : MonoBehaviour
 
 	public void OnPlayerSpringCollision(bool isInSpring)
 	{
-		m_is_in_spring = isInSpring || SpringController.Instance.SpringMode == SpringSceneMode.Spring;
+		m_is_in_spring = isInSpring || SpringManager.Instance.SpringMode == SpringSceneMode.Spring;
 	}
 
 	public void OnMove(Move move)
@@ -55,7 +55,7 @@ public class MusicController : MonoBehaviour
 		{
 			m_walk.stop(STOP_MODE.ALLOWFADEOUT);
 		}
-		m_is_in_spring |= SpringController.Instance.SpringMode == SpringSceneMode.Spring;
+		m_is_in_spring |= SpringManager.Instance.SpringMode == SpringSceneMode.Spring;
 		m_walk.setParameterByName(m_springModeWalkName, m_is_in_spring ? 0 : 1);
 	}
 }
