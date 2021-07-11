@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 2860547480810254260}
   - component: {fileID: 2860547480810254266}
   - component: {fileID: 2860547480810254262}
+  - component: {fileID: 839456812}
   m_Layer: 0
   m_Name: MusicManager
   m_TagString: Untagged
@@ -48,6 +49,7 @@ MonoBehaviour:
   m_themeName: event:/Musics/Theme
   m_walkName: event:/Player/Walk
   m_springModeWalkName: SpringMode
+  m_objectFoundName: event:/SoundFX/ObjectFound
 --- !u!114 &2860547480810254266
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -95,6 +97,34 @@ MonoBehaviour:
       - m_Target: {fileID: 2860547480810254260}
         m_TargetAssemblyTypeName: MusicController, Assembly-CSharp
         m_MethodName: OnPlayerSpringCollision
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &839456812
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2860547480810254257}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 89b410e3c37bd0649a5253615b3df4a3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_event: {fileID: 11400000, guid: af3a6598ebbe70b41a6f0620dfe23403, type: 2}
+  m_func:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2860547480810254260}
+        m_TargetAssemblyTypeName: MusicController, Assembly-CSharp
+        m_MethodName: OnObjectFound
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

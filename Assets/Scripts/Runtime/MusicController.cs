@@ -7,7 +7,7 @@ using UnityEngine;
 
 public class MusicController : MonoBehaviour
 {
-	[Header("FMOD")]
+	[Header("Events FMOD")]
 
 	[FMODUnity.EventRef]
 	[SerializeField]
@@ -21,8 +21,14 @@ public class MusicController : MonoBehaviour
 	[SerializeField]
 	private string m_springModeWalkName = "SpringMode";
 
+	[FMODUnity.EventRef]
+	[SerializeField]
+	private string m_objectFoundName;
+
+
 	private EventInstance m_walk;
 	private EventInstance m_theme;
+	private EventInstance m_objectFound;
 
 	private bool m_is_in_spring;
 	void Start()
@@ -40,6 +46,12 @@ public class MusicController : MonoBehaviour
 	public void OnPlayerSpringCollision(bool isInSpring)
 	{
 		m_is_in_spring = isInSpring || SpringManager.Instance.SpringMode == SpringSceneMode.Spring;
+	}
+
+	public void OnObjectFound()
+	{
+		m_objectFound = FMODUnity.RuntimeManager.CreateInstance(m_objectFoundName);
+		m_objectFound.start();
 	}
 
 	public void OnMove(Move move)

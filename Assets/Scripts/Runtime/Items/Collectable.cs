@@ -5,6 +5,7 @@ using CustomEvents;
 
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.VFX;
 
 public class Collectable : MonoBehaviour
 {

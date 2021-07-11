@@ -46,6 +46,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_collectable: {fileID: 11400000, guid: 840199780e964a94dadf6a8d07c3bfd0, type: 2}
+  m_task: {fileID: 0}
+  m_isAutoCollect: 1
 --- !u!65 &7049386295422766904
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -54,7 +56,7 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7049386295422766887}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 0.4, y: 0.6, z: 0.4}
