@@ -4,45 +4,6 @@ on: workflow_dispatch
 
 jobs:
 
-  tests:
-      name: Tests ${{ matrix.testMode }}
-      runs-on: ubuntu-latest
-      strategy:
-        fail-fast: false
-        matrix:
-          testMode:
-            - playmode
-            - editmode
-      steps:
-        # Checkout
-        - name: Checkout repository
-          uses: actions/checkout@v2
-          with:
-            fetch-depth: 0
-        # Cache
-        - uses: actions/cache@v2
-          with:
-            path: Library
-            key: Library-Test
-            restore-keys: Library-Test
-        # Test
-        - name: Run tests
-          uses: game-ci/unity-test-runner@v2
-          env:
-            UNITY_LICENSE: ${{ secrets.UNITY_LICENSE }}
-          with:
-            githubToken: ${{ secrets.GITHUB_TOKEN }}
-            testMode: ${{ matrix.testMode }}
-            artifactsPath: ${{ matrix.testMode }}-artifacts
-            checkName: Test Results ${{ matrix.testMode }}
-          id: test-out
-        # Output
-        - uses: actions/upload-artifact@v2
-          if: always()
-          with:
-            name: Test results for ${{ matrix.testMode }}
-            path: ${{ steps.test-out.outputs.artifactsPath }}
-
   get-tag:
     name: Get tag
     runs-on: ubuntu-latest
