@@ -24,8 +24,9 @@ namespace Utility
 		/// <param name="nameEvent">The name of the event, add "On" in script to this name for register.</param>
 		public static void AutoReferenceUnityEvent(this UnityEvent e, MonoBehaviour caller, string nameEvent)
 		{
-			List<MethodInfo> method_infos = caller.gameObject.GetMethods(typeof(void),
-				new[] { typeof(void) },
+			List<MethodInfo> method_infos = caller.gameObject.GetMethods(
+				typeof(void),
+				null,
 				ReflectionUtilities.publicFlags,
 				new[] { caller });
 

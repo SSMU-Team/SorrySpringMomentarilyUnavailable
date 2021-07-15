@@ -43,19 +43,22 @@ jobs:
             name: Test results for ${{ matrix.testMode }}
             path: ${{ steps.test-out.outputs.artifactsPath }}
 
-  get-tag:
-    name: Get tag
+  create-tag:
+    name: Create tag
     runs-on: ubuntu-latest
     needs: tests
     outputs:
       tag: ${{ steps.version.outputs.tag }}
-    steps: 
+    steps:
       # Checkout
       - name: Checkout repository
         uses: actions/checkout@v2
-      # Tag fetch
-      - name: Tag fetch
-        uses: actions-ecosystem/action-get-latest-tag@v1
+      # Tag
+      - name: Tag creation
+        uses: phish108/autotag-action@1.1.37
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN}}
+          release-branch: "master,main,develop"
         id: version
 
   build:
@@ -67,7 +70,7 @@ jobs:
           - StandaloneWindows
           - StandaloneWindows64
           - StandaloneLinux64
-    needs: get-tag
+    needs: create-tag
     steps:
       # Checkout
       - name: Checkout repository
@@ -94,10 +97,10 @@ jobs:
       - name: Zip build
         run: |
           pushd build/${{ matrix.targetPlatform }}
-          zip -r ../../Build-${{ matrix.targetPlatform }}-${{ needs.get-tag.outputs.tag }}.zip .
+          zip -r ../../Build-${{ matrix.targetPlatform }}-${{ needs.create-tag.outputs.tag }}.zip .
           popd
       # Output Zip
       - uses: actions/upload-artifact@v2
         with:
-          name: Build-${{ matrix.targetPlatform }}-${{ needs.get-tag.outputs.tag }}.zip
-          path: ./Build-${{ matrix.targetPlatform }}-${{ needs.get-tag.outputs.tag }}.zip
+          name: Build-${{ matrix.targetPlatform }}-${{ needs.create-tag.outputs.tag }}.zip
+          path: ./Build-${{ matrix.targetPlatform }}-${{ needs.create-tag.outputs.tag }}.zip

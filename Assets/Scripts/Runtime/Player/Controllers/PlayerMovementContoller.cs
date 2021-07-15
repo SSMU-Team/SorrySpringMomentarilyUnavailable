@@ -40,7 +40,7 @@ public class PlayerMovementContoller : MonoBehaviour
 	private Rigidbody m_rigidbody;
 	private PlayerCameraController m_cameraController;
 
-	private bool IsInSpring => m_springCollisionController.IsInSpring || SpringController.Instance.SpringMode == SpringSceneMode.Spring;
+	private bool IsInSpring => m_springCollisionController.IsInSpring || SpringManager.Instance.SpringMode == SpringSceneMode.Spring;
 
 	private Vector2 m_inputVelocity = Vector2.zero;
 	private bool m_jumpToPerformThisFrame = false;

@@ -40,8 +40,6 @@ public class FairyController : MonoBehaviour
 	private float m_speedCharge;
 	private Tweener m_springtween;
 
-	private FairyCatchObjetController m_catchObjectController;
-
 	private bool m_isPaused;
 
 	private float m_lastFairyPosY;
@@ -65,25 +63,11 @@ public class FairyController : MonoBehaviour
 	{
 		if(ctx.started && !m_springActivated && !m_isPaused)
 		{
-			if(m_catchObjectController.RechearchObjects())
-			{
-				m_catchObjectController.CatchObject();
-			}
-			else
-			{
-				ActivateSpring(true);
-			}
+			ActivateSpring(true);
 		}
-		else if(ctx.canceled && (m_springActivated || m_catchObjectController.IsCatchObject))
+		else if(ctx.canceled && m_springActivated)
 		{
-			if(m_catchObjectController.IsCatchObject)
-			{
-				m_catchObjectController.DropObject();
-			}
-			if(m_springActivated)
-			{
-				ActivateSpring(false);
-			}
+			ActivateSpring(false);
 		}
 	}
 
@@ -93,7 +77,7 @@ public class FairyController : MonoBehaviour
 	{
 		m_actualCharge = 1.0f;
 		m_main_camera = Camera.main;
-		m_catchObjectController = GetComponentInChildren<FairyCatchObjetController>();
+		SpringManager.Instance.SetFairy(this);
 	}
 
 	private void ActivateSpring(bool activate)
@@ -102,8 +86,8 @@ public class FairyController : MonoBehaviour
 		{
 			m_springtween.Kill();
 			m_springtween = DOTween.To(
-				() => SpringController.Instance.HotRadius,
-				x => SpringController.Instance.HotRadius = x,
+				() => SpringManager.Instance.HotRadius,
+				x => SpringManager.Instance.HotRadius = x,
 				m_radiusSpring,
 				m_durationSpringTransition)
 			.SetEase(m_springEase)
@@ -116,8 +100,8 @@ public class FairyController : MonoBehaviour
 		{
 			m_springtween.Kill();
 			m_springtween = DOTween.To(
-				() => SpringController.Instance.HotRadius,
-				x => SpringController.Instance.HotRadius = x,
+				() => SpringManager.Instance.HotRadius,
+				x => SpringManager.Instance.HotRadius = x,
 				0.0f,
 				m_durationSpringTransition)
 			.SetEase(m_springEase)
@@ -147,7 +131,7 @@ public class FairyController : MonoBehaviour
 			Vector3 player_pos = PlayerReference.PlayerGameObject.transform.position;
 			Vector2 center_pos = new Vector2(player_pos.x, player_pos.z);
 
-			if (Vector2.Distance(new Vector2(new_pos.x, new_pos.z), center_pos) >= m_maxDistance)
+			if(Vector2.Distance(new Vector2(new_pos.x, new_pos.z), center_pos) >= m_maxDistance)
 			{
 				new_pos.y = m_lastFairyPosY;
 				Vector2 v = new Vector2(new_pos.x, new_pos.z) - center_pos;

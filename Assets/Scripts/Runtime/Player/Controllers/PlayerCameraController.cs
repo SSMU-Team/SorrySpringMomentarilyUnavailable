@@ -24,12 +24,12 @@ public class PlayerCameraController : MonoBehaviour
 
 	private void Awake()
 	{
-		m_mainCamera = Camera.main;
 		m_nbCamOn = 0;
 	}
 
 	private void Start()
 	{
+		m_mainCamera = GameObject.Find("Main Camera").GetComponent<Camera>();
 		GameObject default_cam = GameObject.Find("CM VCam Default");
 		if(default_cam == null)
 		{
@@ -69,14 +69,14 @@ public class PlayerCameraController : MonoBehaviour
 	{
 		ActualCam = camera;
 		camera.Priority = (int)CamPriority.On;
-		camera.Follow = transform;
+		//camera.Follow = transform;
 		camera.LookAt = transform;
 	}
 
 	private void CameraOff(CinemachineVirtualCamera camera)
 	{
 		camera.Priority = (int)CamPriority.Off;
-		camera.Follow = null;
+		//camera.Follow = null;
 		camera.LookAt = null;
 	}
 
