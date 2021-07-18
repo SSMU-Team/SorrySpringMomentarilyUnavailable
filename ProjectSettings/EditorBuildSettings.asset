@@ -15,9 +15,6 @@ EditorBuildSettings:
     path: Assets/Data/Scenes/Sub-scene/HUD - UI.unity
     guid: 5a375802372e75c478f5d89d73dad9b4
   - enabled: 1
-    path: Assets/Data/Scenes/Levels/Proto-0.2.unity
-    guid: 95051deb257373a4ab6ba5dbbb079505
-  - enabled: 1
     path: Assets/Data/Scenes/Sub-scene/Lights.unity
     guid: b711da7f3053adc47a9867040a2baa0e
   - enabled: 1
