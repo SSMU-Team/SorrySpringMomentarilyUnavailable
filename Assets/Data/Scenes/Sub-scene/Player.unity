@@ -262,7 +262,7 @@ PrefabInstance:
     - target: {fileID: 2359823024480693587, guid: fbd32755002bdad4796781d14606d551,
         type: 3}
       propertyPath: m_Name
-      value: SpringManager (Singleton)
+      value: SpringController (Singleton)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fbd32755002bdad4796781d14606d551, type: 3}

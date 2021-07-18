@@ -130,6 +130,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4232024049753840472, guid: b60390a74d13d6d46b8eaa05832fb94a,
+        type: 3}
+      propertyPath: m_games.Array.data[0].levels.Array.data[0].scenePath
+      value: Assets/Data/Scenes/Proto-0.3.unity
+      objectReference: {fileID: 0}
+    - target: {fileID: 4232024049753840472, guid: b60390a74d13d6d46b8eaa05832fb94a,
+        type: 3}
+      propertyPath: m_games.Array.data[0].levels.Array.data[0].sceneAsset
+      value: 
+      objectReference: {fileID: 102900000, guid: 81c72f914eb7aaa4bbd0e92835ad9346,
+        type: 3}
     - target: {fileID: 4232024049753840473, guid: b60390a74d13d6d46b8eaa05832fb94a,
         type: 3}
       propertyPath: m_RootOrder

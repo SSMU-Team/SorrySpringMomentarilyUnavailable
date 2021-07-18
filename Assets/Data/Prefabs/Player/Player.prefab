@@ -211,6 +211,9 @@ MonoBehaviour:
   m_speedWalk: 200
   m_sprintMultiplier: 1.2
   m_rotationSpeed: 25
+  m_physicsMat:
+  - {fileID: 13400000, guid: d0dda4c332520764883e2908cacef5de, type: 2}
+  - {fileID: 13400000, guid: 4d49a25c78620f046b2b9d0a744b5972, type: 2}
   m_jumpForce: 150
   m_jumpStepsPowerMax: 6
   m_jumpCooldown: 0.01
@@ -318,7 +321,7 @@ CapsuleCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1405048126198997289}
-  m_Material: {fileID: 13400000, guid: 4d49a25c78620f046b2b9d0a744b5972, type: 2}
+  m_Material: {fileID: 13400000, guid: d0dda4c332520764883e2908cacef5de, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   m_Radius: 0.3

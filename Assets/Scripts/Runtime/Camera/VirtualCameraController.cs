@@ -8,7 +8,7 @@ using UnityEngine;
 public class VirtualCameraController : MonoBehaviour
 {
 	[Header("Settings Confiner", order = 1)]
-	[SerializeField] private bool m_isDefaultCam = true;
+	[SerializeField] private bool m_isDefaultCam = false;
 	[SerializeField] [Range(0f, 10f)] private float m_virtualCamDamping;
 	[SerializeField] private bool m_confineCamera = false;
 	[SerializeField] private bool m_confineScreenEdges = true;

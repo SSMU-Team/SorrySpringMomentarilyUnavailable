@@ -46,8 +46,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_collectable: {fileID: 11400000, guid: 840199780e964a94dadf6a8d07c3bfd0, type: 2}
-  m_task: {fileID: 0}
+  m_collectableEvent: {fileID: 11400000, guid: e61da4337d3931f4c866c10db09a7f9e, type: 2}
   m_isAutoCollect: 1
+  m_canCollect: 1
 --- !u!65 &7049386295422766904
 BoxCollider:
   m_ObjectHideFlags: 0

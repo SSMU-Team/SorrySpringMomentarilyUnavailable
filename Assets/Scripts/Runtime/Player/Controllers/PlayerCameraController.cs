@@ -69,14 +69,14 @@ public class PlayerCameraController : MonoBehaviour
 	{
 		ActualCam = camera;
 		camera.Priority = (int)CamPriority.On;
-		camera.Follow = transform;
+		//camera.Follow = transform;
 		camera.LookAt = transform;
 	}
 
 	private void CameraOff(CinemachineVirtualCamera camera)
 	{
 		camera.Priority = (int)CamPriority.Off;
-		camera.Follow = null;
+		//camera.Follow = null;
 		camera.LookAt = null;
 	}
 
