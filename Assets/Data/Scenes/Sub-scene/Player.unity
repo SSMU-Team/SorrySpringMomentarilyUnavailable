@@ -262,7 +262,7 @@ PrefabInstance:
     - target: {fileID: 2359823024480693587, guid: fbd32755002bdad4796781d14606d551,
         type: 3}
       propertyPath: m_Name
-      value: SpringController
+      value: SpringController (Singleton)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fbd32755002bdad4796781d14606d551, type: 3}
@@ -469,42 +469,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1487398239, guid: 1a31a278c8db1cc469cbbaa7bd3a64e8, type: 3}
-      propertyPath: m_onTriggerFilteredEnter.m_PersistentCalls.m_Calls.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1487398239, guid: 1a31a278c8db1cc469cbbaa7bd3a64e8, type: 3}
-      propertyPath: m_onTriggerFilteredEnter.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1487398239, guid: 1a31a278c8db1cc469cbbaa7bd3a64e8, type: 3}
-      propertyPath: m_onTriggerFilteredEnter.m_PersistentCalls.m_Calls.Array.data[2].m_Mode
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1487398239, guid: 1a31a278c8db1cc469cbbaa7bd3a64e8, type: 3}
-      propertyPath: m_onTriggerFilteredEnter.m_PersistentCalls.m_Calls.Array.data[1].m_Target
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 1487398239, guid: 1a31a278c8db1cc469cbbaa7bd3a64e8, type: 3}
-      propertyPath: m_onTriggerFilteredEnter.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 1487398239, guid: 1a31a278c8db1cc469cbbaa7bd3a64e8, type: 3}
-      propertyPath: m_onTriggerFilteredEnter.m_PersistentCalls.m_Calls.Array.data[2].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 1487398239, guid: 1a31a278c8db1cc469cbbaa7bd3a64e8, type: 3}
-      propertyPath: m_onTriggerFilteredEnter.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 1487398239, guid: 1a31a278c8db1cc469cbbaa7bd3a64e8, type: 3}
-      propertyPath: m_onTriggerFilteredEnter.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
-      value: SpringPlayerCollisionController, Assembly-CSharp
-      objectReference: {fileID: 0}
-    - target: {fileID: 1487398239, guid: 1a31a278c8db1cc469cbbaa7bd3a64e8, type: 3}
-      propertyPath: m_onTriggerFilteredEnter.m_PersistentCalls.m_Calls.Array.data[2].m_TargetAssemblyTypeName
-      value: SpringPlayerCollisionController, Assembly-CSharp
-      objectReference: {fileID: 0}
     - target: {fileID: 1405048126198997285, guid: 1a31a278c8db1cc469cbbaa7bd3a64e8,
         type: 3}
       propertyPath: m_RootOrder

@@ -10,22 +10,23 @@ using UnityEngine.VFX;
 public class Collectable : MonoBehaviour
 {
 	[SerializeField] private ScriptableCollectable m_collectable;
-	[SerializeField] private ScriptableTask m_task;
+	[SerializeField] private CollectableEvent m_collectableEvent;
 	[SerializeField] private bool m_isAutoCollect = false;
+	[SerializeField] bool m_canCollect = false;
 
 	public bool IsAutoCollect => m_isAutoCollect;
 
-	private bool m_canCollect = false;
+	private void Start()
+	{
+		if(m_collectable.can_be_reset)
+			m_collectable.Reset();
+	}
 
 	public bool OnCollect()
 	{
 		if(m_canCollect)
 		{
 			m_collectable.Number++;
-			if(m_task != null)
-			{
-				m_task.NumberPerformed++;
-			}
 			Destroy(gameObject);
 			return true;
 		}
@@ -39,6 +40,13 @@ public class Collectable : MonoBehaviour
 
 	public void OnTriggerFilteredExit(GameObject obj)
 	{
-		//m_canCollect = false;
+	}
+
+
+
+	[ContextMenu("Update collectable")]
+	public void UpdateCollectable()
+	{
+		m_collectableEvent.Invoke(m_collectable);
 	}
 }
