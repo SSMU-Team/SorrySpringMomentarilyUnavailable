@@ -17,8 +17,10 @@ public class PlayerCameraController : MonoBehaviour
 
 	private CinemachineVirtualCamera m_defaultCam;
 	private Camera m_mainCamera;
+	private CinemachineBrain m_brainCam;
 	public Vector3 Forward => m_mainCamera.transform.forward;
 	private int m_nbCamOn;
+	private bool m_isTransitionning = false;
 
 	public CinemachineVirtualCamera ActualCam { get; private set; }
 
@@ -30,6 +32,7 @@ public class PlayerCameraController : MonoBehaviour
 	private void Start()
 	{
 		m_mainCamera = GameObject.Find("Main Camera").GetComponent<Camera>();
+		m_brainCam = m_mainCamera.GetComponent<CinemachineBrain>();
 		GameObject default_cam = GameObject.Find("CM VCam Default");
 		if(default_cam == null)
 		{
@@ -40,12 +43,20 @@ public class PlayerCameraController : MonoBehaviour
 
 	public void EnterCamera(CinemachineVirtualCamera camera)
 	{
+		StartCoroutine(EChangeCamOn(camera));
+	}
+
+	private IEnumerator EChangeCamOn(CinemachineVirtualCamera camera)
+	{
+		yield return new WaitWhile(() => m_isTransitionning);
+		m_isTransitionning = true;
 		CameraOn(camera);
 		if(m_nbCamOn == 0)
 		{
 			CameraOff(m_defaultCam);
 		}
 		m_nbCamOn++;
+		m_isTransitionning = false;
 	}
 
 	public void ExitCamera(CinemachineVirtualCamera camera)
@@ -77,7 +88,7 @@ public class PlayerCameraController : MonoBehaviour
 	{
 		camera.Priority = (int)CamPriority.Off;
 		//camera.Follow = null;
-		camera.LookAt = null;
+		//camera.LookAt = null;
 	}
 
 	#region Old Code

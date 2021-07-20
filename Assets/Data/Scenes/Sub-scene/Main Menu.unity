@@ -192,6 +192,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3215157892539908558, guid: 683a556054f7dd24a8e848dc7b8649db,
         type: 3}
+      propertyPath: m_CustomBlends
+      value: 
+      objectReference: {fileID: 11400000, guid: 16f1ab4214a1cd0469bad460a74aa422,
+        type: 2}
+    - target: {fileID: 3215157892539908558, guid: 683a556054f7dd24a8e848dc7b8649db,
+        type: 3}
       propertyPath: m_ShowDebugText
       value: 0
       objectReference: {fileID: 0}
