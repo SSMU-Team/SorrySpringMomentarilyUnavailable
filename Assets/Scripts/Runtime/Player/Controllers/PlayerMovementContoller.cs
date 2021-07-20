@@ -14,6 +14,7 @@ public class PlayerMovementContoller : MonoBehaviour
 	[SerializeField] [Range(5f, 50f)] private float m_rotationSpeed = 10f;
 
 	[Header("Jump and fall", order = 1)]
+	[SerializeField] [Range(0.0f, 5.0f)] private float m_airControl = 1.0f;
 	[SerializeField] private PhysicMaterial[] m_physicsMat;
 	[SerializeField] [Range(0f, 1000f)] private float m_jumpForce;
 	[SerializeField] [Range(1, 30)] private int m_jumpStepsPowerMax;
@@ -83,7 +84,7 @@ public class PlayerMovementContoller : MonoBehaviour
 		}
 		else if(IsMoving && CheckWall())
 		{
-			ApplyMove(0.5f);
+			ApplyMove(m_airControl);
 		}
 
 		if((IsGrounded && m_jumpPerformCounter == 0) || m_jumpPerformCounter > 0)
@@ -108,6 +109,7 @@ public class PlayerMovementContoller : MonoBehaviour
 			FlattenCameraRotation();
 		}
 
+		m_velocity.y = Mathf.Clamp(m_velocity.y, m_minMaxSpeedY.x, m_minMaxSpeedY.y);
 		m_rigidbody.velocity = m_velocity;
 
 		//Events

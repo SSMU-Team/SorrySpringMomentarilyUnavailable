@@ -211,6 +211,7 @@ MonoBehaviour:
   m_speedWalk: 200
   m_sprintMultiplier: 1.2
   m_rotationSpeed: 25
+  m_airControl: 1
   m_physicsMat:
   - {fileID: 13400000, guid: d0dda4c332520764883e2908cacef5de, type: 2}
   - {fileID: 13400000, guid: 4d49a25c78620f046b2b9d0a744b5972, type: 2}
