@@ -1,5 +1,19 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!136 &1146242198092538540
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 884254913246876681}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.13
+  m_Height: 2.1001532
+  m_Direction: 1
+  m_Center: {x: 0, y: 1.0483433, z: 0}
 --- !u!1001 &37410855200254296
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -62,10 +76,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -5505725656424652022, guid: c5ce52b1b25740e4f8c740e1b8499de7,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: c5ce52b1b25740e4f8c740e1b8499de7,
         type: 3}
       propertyPath: m_Name
-      value: Epouvantail_LP
+      value: Epouvantail_LP Variant
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c5ce52b1b25740e4f8c740e1b8499de7, type: 3}
+--- !u!1 &884254913246876681 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: c5ce52b1b25740e4f8c740e1b8499de7,
+    type: 3}
+  m_PrefabInstance: {fileID: 37410855200254296}
+  m_PrefabAsset: {fileID: 0}

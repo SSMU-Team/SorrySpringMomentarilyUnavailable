@@ -121,7 +121,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_numberPerformed: {fileID: 105540750}
   m_numberToPerform: {fileID: 966214447}
-  task: {fileID: 11400000, guid: 2b44af204f2894c49a10e5284de07479, type: 2}
+  collectable: {fileID: 11400000, guid: 2b44af204f2894c49a10e5284de07479, type: 2}
 --- !u!1 &105540748
 GameObject:
   m_ObjectHideFlags: 0
@@ -1118,7 +1118,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_numberPerformed: {fileID: 609197106}
   m_numberToPerform: {fileID: 2025627728}
-  task: {fileID: 11400000, guid: 840199780e964a94dadf6a8d07c3bfd0, type: 2}
+  collectable: {fileID: 11400000, guid: 840199780e964a94dadf6a8d07c3bfd0, type: 2}
 --- !u!1 &1892098294
 GameObject:
   m_ObjectHideFlags: 0

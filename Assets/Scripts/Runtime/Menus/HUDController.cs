@@ -21,7 +21,7 @@ public class HUDController : Menu
 	{
 		foreach(UICollectable t in collectables)
 		{
-			if(task == t.task)
+			if(task == t.collectable)
 			{
 				t.NumberPerformed = task.Number.ToString();
 			}

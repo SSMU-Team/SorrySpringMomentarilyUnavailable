@@ -39,4 +39,9 @@ public class ScriptableCollectable : ScriptableObject
 	{
 		m_number = 0;
 	}
+
+	public bool IsFull()
+	{
+		return m_number == m_numberMax;
+	}
 }

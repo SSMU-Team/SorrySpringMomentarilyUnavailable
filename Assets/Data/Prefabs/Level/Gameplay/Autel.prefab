@@ -1,5 +1,144 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &3331077064139585530
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5092725252681862438}
+  - component: {fileID: 1172314327524664439}
+  - component: {fileID: 1543478987097684242}
+  - component: {fileID: 5835220542094809200}
+  m_Layer: 0
+  m_Name: Interaction
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5092725252681862438
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3331077064139585530}
+  m_LocalRotation: {x: 0, y: 0.017975932, z: 0, w: 0.9998385}
+  m_LocalPosition: {x: 0.212, y: 0, z: -0.465}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 5539790082346449580}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 2.06, z: 0}
+--- !u!65 &1172314327524664439
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3331077064139585530}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2.6, y: 2, z: 3.51}
+  m_Center: {x: -0.14, y: 1.1, z: -0.06}
+--- !u!114 &1543478987097684242
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3331077064139585530}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ccd6eb53409540b41955122877bf754e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_layers_detected:
+    serializedVersion: 2
+    m_Bits: 128
+  m_onTriggerFilteredEnter:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 6471938960726025062}
+        m_TargetAssemblyTypeName: Autel, Assembly-CSharp
+        m_MethodName: OnTriggerFilteredEnter
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  m_onTriggerFilteredStay:
+    m_PersistentCalls:
+      m_Calls: []
+  m_onTriggerFilteredExit:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 6471938960726025062}
+        m_TargetAssemblyTypeName: Autel, Assembly-CSharp
+        m_MethodName: OnTriggerFilteredExit
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &5835220542094809200
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3331077064139585530}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 89b410e3c37bd0649a5253615b3df4a3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_event: {fileID: 11400000, guid: 84cb93db5e9b5b8499a17004999cc689, type: 2}
+  m_func:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 6471938960726025062}
+        m_TargetAssemblyTypeName: Autel, Assembly-CSharp
+        m_MethodName: OnInteraction
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &6471938960726025062
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5164108242750382102}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9106f7b43591e994eaf3719bca6db827, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_oakNut: {fileID: 11400000, guid: 2b44af204f2894c49a10e5284de07479, type: 2}
+  m_interactableEvent: {fileID: 11400000, guid: 84cb93db5e9b5b8499a17004999cc689,
+    type: 2}
+  m_autelEvent: {fileID: 11400000, guid: 0e4abd6988862cc48af23f67ce143061, type: 2}
+  m_loadMainMenu: {fileID: 11400000, guid: 81af2552c6c57a440865d75ccb94c859, type: 2}
 --- !u!1001 &5434702116780285255
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -65,7 +204,19 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: afb57af0cf78d8e438bc6cf1a53abcc1,
         type: 3}
       propertyPath: m_Name
-      value: LP_statue
+      value: Autel
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: afb57af0cf78d8e438bc6cf1a53abcc1, type: 3}
+--- !u!1 &5164108242750382102 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: afb57af0cf78d8e438bc6cf1a53abcc1,
+    type: 3}
+  m_PrefabInstance: {fileID: 5434702116780285255}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &5539790082346449580 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: afb57af0cf78d8e438bc6cf1a53abcc1,
+    type: 3}
+  m_PrefabInstance: {fileID: 5434702116780285255}
+  m_PrefabAsset: {fileID: 0}

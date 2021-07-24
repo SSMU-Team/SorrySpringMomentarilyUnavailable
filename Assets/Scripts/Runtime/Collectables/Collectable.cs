@@ -40,9 +40,8 @@ public class Collectable : MonoBehaviour
 
 	public void OnTriggerFilteredExit(GameObject obj)
 	{
+
 	}
-
-
 
 	[ContextMenu("Update collectable")]
 	public void UpdateCollectable()
