@@ -124,6 +124,8 @@ GameObject:
   - component: {fileID: 2266834706121482}
   - component: {fileID: 8376141665657868411}
   - component: {fileID: 6015196063128168649}
+  - component: {fileID: 469796459488639563}
+  - component: {fileID: 2514088201699510883}
   m_Layer: 9
   m_Name: Noisette
   m_TagString: Untagged
@@ -144,6 +146,7 @@ Transform:
   m_Children:
   - {fileID: 4419583077581027321}
   - {fileID: 678809032}
+  - {fileID: 3311497512832376822}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -285,6 +288,91 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_itemFound: {fileID: 678809034}
+--- !u!114 &469796459488639563
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2266834706121493}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 59c6e784ebbe24147956903aed483033, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_objectFoundName: event:/SoundFX/ObjectFound
+--- !u!114 &2514088201699510883
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2266834706121493}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 89b410e3c37bd0649a5253615b3df4a3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_event: {fileID: 11400000, guid: af3a6598ebbe70b41a6f0620dfe23403, type: 2}
+  m_func:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 469796459488639563}
+        m_TargetAssemblyTypeName: CollectableSound, Assembly-CSharp
+        m_MethodName: OnObjectFound
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!1 &3833264600834071196
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3311497512832376822}
+  - component: {fileID: 6083212168744509468}
+  m_Layer: 0
+  m_Name: Sound
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3311497512832376822
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3833264600834071196}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 2266834706121483}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6083212168744509468
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3833264600834071196}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 59c6e784ebbe24147956903aed483033, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_objectFoundName: 
 --- !u!1001 &4242173256749420562
 PrefabInstance:
   m_ObjectHideFlags: 0

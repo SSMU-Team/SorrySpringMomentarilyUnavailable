@@ -28,6 +28,9 @@ GameObject:
   - component: {fileID: 4190279701066394868}
   - component: {fileID: 5317998745043817721}
   - component: {fileID: 447599481747148939}
+  - component: {fileID: 8946392899416082044}
+  - component: {fileID: 9217973295132542124}
+  - component: {fileID: 6245690380833156832}
   m_Layer: 7
   m_Name: Player
   m_TagString: Untagged
@@ -283,6 +286,76 @@ CapsuleCollider:
   m_Height: 1
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &8946392899416082044
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1405048126198997289}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a14018e463f2b746bc160bfce1775b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_walkName: event:/Player/Walk
+  m_springModeWalkName: SpringMode
+--- !u!114 &9217973295132542124
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1405048126198997289}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3976a1fd3e335d4458a2b7ed19d267ce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_event: {fileID: 11400000, guid: 018d49c170dcede4ebc91f6b80b33218, type: 2}
+  m_func:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 8946392899416082044}
+        m_TargetAssemblyTypeName: WalkSound, Assembly-CSharp
+        m_MethodName: OnSpring
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &6245690380833156832
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1405048126198997289}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e6f19d27251f3e4e97d2c53b16b2bf1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_event: {fileID: 11400000, guid: cddb9d3dd3c72744a825dc4171f60be5, type: 2}
+  m_func:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 8946392899416082044}
+        m_TargetAssemblyTypeName: WalkSound, Assembly-CSharp
+        m_MethodName: OnMove
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &3920746144148423531
 GameObject:
   m_ObjectHideFlags: 0
