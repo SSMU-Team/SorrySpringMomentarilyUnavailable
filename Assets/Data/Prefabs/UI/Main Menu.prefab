@@ -1410,6 +1410,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_creditMenu: {fileID: 7762978115362854771}
   m_loadLevel: {fileID: 11400000, guid: ca214cff261366744a063e1d41408986, type: 2}
+  m_spring: {fileID: 11400000, guid: 018d49c170dcede4ebc91f6b80b33218, type: 2}
 --- !u!1 &7762978116118647315
 GameObject:
   m_ObjectHideFlags: 0
