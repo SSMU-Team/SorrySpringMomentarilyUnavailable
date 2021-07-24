@@ -159,11 +159,12 @@ public class FairyController : MonoBehaviour
 		}
 	}
 
-	public void OnEndLevel(GameObject obj)
+	public void OnEndLevel()
 	{
 		m_radiusSpring = m_radiusSpringEnd;
 		m_durationSpringTransition = m_durationSpringTransitionEnd;
 		m_canMoveFairy = false;
 		ActivateSpring(true);
+
 	}
 }

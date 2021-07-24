@@ -2,35 +2,20 @@ using System.Collections;
 using System.Collections.Generic;
 using CustomEvents;
 using SceneManagement;
- using UnityEngine.Playables; 
+using UnityEngine.Playables;
 using UnityEngine;
 
-public class Autel : MonoBehaviour
+public class Autel : MonoBehaviour, IInteractable
 {
 	[SerializeField] private ScriptableCollectable m_oakNut;
-	[SerializeField] private SimpleEvent m_interactableEvent;
+	[SerializeField] private SimpleEvent m_endLevelEvent;
 	[SerializeField] private BoolEvent m_autelEvent;
-	[SerializeField] private SimpleEvent m_loadMainMenu;
-	[SerializeField] private PlayableDirector m_timeline;
+	//[SerializeField] private SimpleEvent m_loadMainMenu;
 
-	private bool m_isPlayerCollide = false;
-
-	public void OnTriggerFilteredEnter(GameObject obj)
-	{
-		m_isPlayerCollide = true;
-	}
-
-	public void OnTriggerFilteredExit(GameObject obj)
-	{
-		m_isPlayerCollide = false;
-	}
 
 	public void OnInteraction()
 	{
-		if(m_isPlayerCollide)
-		{
-			AutelInteraction();
-		}
+		AutelInteraction();
 	}
 
 	private void AutelInteraction()
@@ -40,7 +25,7 @@ public class Autel : MonoBehaviour
 			// Le niveau est terminé
 			Debug.Log("Le niveau est terminé -> Retour du printemps.");
 			m_autelEvent.Invoke(true);
-			m_timeline.Play();
+			m_endLevelEvent.Invoke();
 		}
 		else
 		{

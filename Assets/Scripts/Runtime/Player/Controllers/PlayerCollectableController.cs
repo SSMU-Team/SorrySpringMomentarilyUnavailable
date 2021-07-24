@@ -7,8 +7,6 @@ using UnityEngine;
 
 public class PlayerCollectableController : MonoBehaviour
 {
-	[SerializeField] private SimpleEvent m_interactableEvent;
-	
 	private List<Collectable> m_collectableStack;
 
 	private void Awake()
@@ -19,19 +17,25 @@ public class PlayerCollectableController : MonoBehaviour
 	public void OnTriggerFilteredEnter(GameObject obj)
 	{
 		Collectable collectable = obj.GetComponent<Collectable>();
-		m_collectableStack.Add(collectable); 
-		if(collectable.IsAutoCollect)
+		if(collectable != null)
 		{
-			OnInteraction();
+			m_collectableStack.Add(collectable);
+			if(collectable.IsAutoCollect)
+			{
+				OnInteraction();
+			}
 		}
 	}
 
 	public void OnTriggerFilteredExit(GameObject obj)
 	{
 		Collectable collectable = obj.GetComponent<Collectable>();
-		if(m_collectableStack.Contains(collectable))
+		if(collectable != null)
 		{
-			m_collectableStack.Remove(collectable);
+			if(m_collectableStack.Contains(collectable))
+			{
+				m_collectableStack.Remove(collectable);
+			}
 		}
 	}
 

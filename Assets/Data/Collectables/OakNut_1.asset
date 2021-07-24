@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 75da1fdd62480e24e9b68edcaaf49b3b, type: 3}
   m_Name: OakNut_1
   m_EditorClassIdentifier: 
-  m_number: 7
-  m_numberMax: 7
+  m_number: 1
+  m_numberMax: 1
   can_be_reset: 1
   m_collectableEvent: {fileID: 11400000, guid: e61da4337d3931f4c866c10db09a7f9e, type: 2}
