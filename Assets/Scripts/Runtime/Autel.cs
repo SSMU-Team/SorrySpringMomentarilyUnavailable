@@ -8,7 +8,6 @@ using UnityEngine;
 public class Autel : MonoBehaviour, IInteractable
 {
 	[SerializeField] private ScriptableCollectable m_oakNut;
-	[SerializeField] private SimpleEvent m_endLevelEvent;
 	[SerializeField] private BoolEvent m_autelEvent;
 	//[SerializeField] private SimpleEvent m_loadMainMenu;
 
@@ -25,7 +24,6 @@ public class Autel : MonoBehaviour, IInteractable
 			// Le niveau est terminé
 			Debug.Log("Le niveau est terminé -> Retour du printemps.");
 			m_autelEvent.Invoke(true);
-			m_endLevelEvent.Invoke();
 		}
 		else
 		{

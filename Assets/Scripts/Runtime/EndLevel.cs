@@ -9,12 +9,23 @@ using UnityEngine;
 
 public class EndLevel : MonoBehaviour
 {
+	[SerializeField] private SimpleEvent m_endLevelEvent;
+	[SerializeField] private SimpleEvent m_fairyEnterAutelEvent;
 	public Animation animationPlayer;
 	public SimpleEvent loadMainMenu;
 
-	public void OnEndLevel()
+	public void OnAutelActive(bool isActive)
 	{
-		animationPlayer.Play();
+		if(isActive)
+		{
+			m_fairyEnterAutelEvent.Invoke();
+			animationPlayer.Play();
+		}
+	}
+
+	public void OnFairyEnterFinish()
+	{
+		m_endLevelEvent.Invoke();
 	}
 
 	public void OnEndLevelAnimation()

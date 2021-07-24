@@ -10,8 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 2122892042055864032}
   - component: {fileID: 2122892042055863967}
-  - component: {fileID: 2122892042055863966}
-  - component: {fileID: 2122892042055863965}
+  - component: {fileID: 672327134}
+  - component: {fileID: 672327135}
   m_Layer: 0
   m_Name: Theme Manager
   m_TagString: Untagged
@@ -45,10 +45,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 52b74e8f0ea32834b80e6cd52d004528, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_themeSpringName: event:/Musics/Theme
-  m_themeWinterName: event:/Musics/Theme
-  m_themeVictoryName: event:/Musics/Theme
---- !u!114 &2122892042055863966
+  m_themeSpringName: event:/Musics/ThemeSpring
+  m_themeWinterName: event:/Musics/ThemeWinter
+  m_themeVictoryName: event:/Musics/ThemeVictory
+--- !u!114 &672327134
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -57,26 +57,26 @@ MonoBehaviour:
   m_GameObject: {fileID: 2122892042055863964}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3976a1fd3e335d4458a2b7ed19d267ce, type: 3}
+  m_Script: {fileID: 11500000, guid: 89b410e3c37bd0649a5253615b3df4a3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_event: {fileID: 11400000, guid: 018d49c170dcede4ebc91f6b80b33218, type: 2}
+  m_event: {fileID: 11400000, guid: e5fffb70e488038468c169a994ded9f4, type: 2}
   m_func:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 2122892042055863967}
         m_TargetAssemblyTypeName: SoundThemeManager, Assembly-CSharp
-        m_MethodName: OnSpringTheme
+        m_MethodName: OnEndLevel
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_ObjectArgumentAssemblyTypeName: 
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &2122892042055863965
+--- !u!114 &672327135
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -85,20 +85,20 @@ MonoBehaviour:
   m_GameObject: {fileID: 2122892042055863964}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3976a1fd3e335d4458a2b7ed19d267ce, type: 3}
+  m_Script: {fileID: 11500000, guid: 536e24eab9d8ec345ae9bd67a252f304, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_event: {fileID: 11400000, guid: 0e4abd6988862cc48af23f67ce143061, type: 2}
+  m_event: {fileID: 11400000, guid: ca214cff261366744a063e1d41408986, type: 2}
   m_func:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 2122892042055863967}
         m_TargetAssemblyTypeName: SoundThemeManager, Assembly-CSharp
-        m_MethodName: OnVictoryTheme
+        m_MethodName: OnLoadLevel
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_ObjectArgumentAssemblyTypeName: 
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 

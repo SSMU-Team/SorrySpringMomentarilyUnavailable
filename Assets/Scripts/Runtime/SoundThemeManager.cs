@@ -37,24 +37,13 @@ public class SoundThemeManager : MonoBehaviour
 		m_themeVictory.release();
 	}
 
-	public void OnSpringTheme(bool isInSpring)
+	public void OnLoadLevel(int level)
 	{
-		m_themeVictory.stop(STOP_MODE.IMMEDIATE);
-		if(isInSpring)
-		{
-			m_themeWinter.stop(STOP_MODE.ALLOWFADEOUT);
-			m_themeSpring.start();
-			Debug.Log("Sound Theme : Spring");
-		}
-		else
-		{
-			m_themeSpring.stop(STOP_MODE.ALLOWFADEOUT);
-			m_themeWinter.start();
-			Debug.Log("Sound Theme : Winter");
-		}
+		m_themeSpring.stop(STOP_MODE.ALLOWFADEOUT);
+		m_themeWinter.start();
 	}
 
-	public void OnVictoryTheme(bool isFinish)
+	public void OnEndLevel()
 	{
 		m_themeSpring.stop(STOP_MODE.ALLOWFADEOUT);
 		m_themeWinter.stop(STOP_MODE.ALLOWFADEOUT);

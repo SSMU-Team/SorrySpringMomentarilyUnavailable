@@ -52,6 +52,8 @@ public class FairyController : MonoBehaviour
 
 	private bool m_canMoveFairy = true;
 
+	private Animation m_animation;
+
 	#region Events
 
 	public void OnPause(bool pause)
@@ -86,6 +88,7 @@ public class FairyController : MonoBehaviour
 		m_actualCharge = 1.0f;
 		m_main_camera = Camera.main;
 		SpringManager.Instance.SetFairy(this);
+		m_animation = GetComponent<Animation>();
 	}
 
 	private void ActivateSpring(bool activate)
@@ -159,11 +162,18 @@ public class FairyController : MonoBehaviour
 		}
 	}
 
+
+	public void OnFairyEnterAutel()
+	{
+		m_animation.Play();
+		m_canMoveFairy = false;
+		Debug.Log("Fairy");
+	}
+
 	public void OnEndLevel()
 	{
 		m_radiusSpring = m_radiusSpringEnd;
 		m_durationSpringTransition = m_durationSpringTransitionEnd;
-		m_canMoveFairy = false;
 		ActivateSpring(true);
 
 	}
