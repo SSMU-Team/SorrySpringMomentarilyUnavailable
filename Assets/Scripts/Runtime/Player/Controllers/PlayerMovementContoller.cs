@@ -34,6 +34,7 @@ public class PlayerMovementContoller : MonoBehaviour
 
 	[Header("Events", order = 4)]
 	[SerializeField] private MoveEvent m_moveEvent;
+	[SerializeField] private SimpleEvent m_jumpEvent;
 
 	public bool IsGrounded { get; private set; } = false;
 	public bool IsMoving => m_inputVelocity.sqrMagnitude > 0.1;
@@ -177,6 +178,7 @@ public class PlayerMovementContoller : MonoBehaviour
 				{
 					m_jumpToPerformThisFrame = true;
 					m_canJump = false;
+					m_jumpEvent.Invoke();
 				}
 			}
 		}
