@@ -97,7 +97,8 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
-  m_LightingDataAsset: {fileID: 0}
+  m_LightingDataAsset: {fileID: 112000004, guid: d5bd491667cb2164f9e08d3f8e707f1f,
+    type: 2}
   m_LightingSettings: {fileID: 0}
 --- !u!196 &4
 NavMeshSettings:
@@ -252,6 +253,11 @@ PrefabInstance:
     - target: {fileID: 2359823024480693582, guid: fbd32755002bdad4796781d14606d551,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2359823024480693584, guid: fbd32755002bdad4796781d14606d551,
+        type: 3}
+      propertyPath: m_springMode
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2359823024480693587, guid: fbd32755002bdad4796781d14606d551,

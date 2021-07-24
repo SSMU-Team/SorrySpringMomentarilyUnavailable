@@ -75,10 +75,20 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -2254504247542753893, guid: f4836b8a30085d64ca471f454db94862,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: f4836b8a30085d64ca471f454db94862,
         type: 3}
       propertyPath: m_Name
-      value: Barre_Seule
+      value: Barre_Seule Variant
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: f4836b8a30085d64ca471f454db94862,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 1644411199500064338, guid: f4836b8a30085d64ca471f454db94862, type: 3}

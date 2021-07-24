@@ -81,10 +81,20 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -4538410101984978565, guid: c5ce52b1b25740e4f8c740e1b8499de7,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: c5ce52b1b25740e4f8c740e1b8499de7,
         type: 3}
       propertyPath: m_Name
       value: Epouvantail_LP Variant
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: c5ce52b1b25740e4f8c740e1b8499de7,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c5ce52b1b25740e4f8c740e1b8499de7, type: 3}
