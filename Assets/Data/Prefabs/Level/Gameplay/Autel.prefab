@@ -13,6 +13,48 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 2.6, y: 2, z: 3.51}
   m_Center: {x: -0.14, y: 1.1, z: -0.06}
+--- !u!114 &3130105512880051929
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5164108242750382102}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3976a1fd3e335d4458a2b7ed19d267ce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_event: {fileID: 11400000, guid: 0e4abd6988862cc48af23f67ce143061, type: 2}
+  m_func:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 4371646599904214497}
+        m_TargetAssemblyTypeName: AutelSound, Assembly-CSharp
+        m_MethodName: OnInteraction
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &4371646599904214497
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5164108242750382102}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 795b2fbe797bc4e47b9728bd1213b517, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_autelVictoryName: event:/SoundFX/ObjectFound
+  m_autelWrongName: event:/SoundFX/ObjectFound
 --- !u!114 &6471938960726025062
 MonoBehaviour:
   m_ObjectHideFlags: 0
