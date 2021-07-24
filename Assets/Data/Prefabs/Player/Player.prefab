@@ -231,6 +231,7 @@ MonoBehaviour:
     m_Bits: 8
   m_rayDist: 0.3
   m_moveEvent: {fileID: 11400000, guid: cddb9d3dd3c72744a825dc4171f60be5, type: 2}
+  m_jumpEvent: {fileID: 11400000, guid: 8edf4f0c9803ded49a220f6f39b6390c, type: 2}
 --- !u!114 &5529392882851554763
 MonoBehaviour:
   m_ObjectHideFlags: 0
