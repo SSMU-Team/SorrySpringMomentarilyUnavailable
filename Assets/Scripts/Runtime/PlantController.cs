@@ -6,16 +6,16 @@ public class PlantController : MonoBehaviour
 {
 	public enum State
 	{
-		OnLand,
+		InGround,
 		GrowthInProgress,
 		GrowthCompleted,
 		Dying
 	}
 
-	[SerializeField] [Range(0f, 10f)] [Tooltip("In Second")] private float m_growthSpeed = 2f;
+	[SerializeField] [Range(0f, 10f)] [Tooltip("In Second")] private float m_growthTimer = 2f;
 	[SerializeField] [Range(0f, 10f)] [Tooltip("In Second")] private float m_timeToFade = 3f;
 
-	[SerializeField] private State m_state = State.OnLand;
+	[SerializeField] private State m_state = State.InGround;
 	[SerializeField] private GameObject m_plateform;
 
 	private bool m_isSpring = false;
@@ -23,7 +23,7 @@ public class PlantController : MonoBehaviour
 
 	private void Start()
 	{
-		m_growthSpeed = 1 / m_growthSpeed;
+		m_growthTimer = 1 / m_growthTimer;
 		m_plateform.SetActive(false);
 	}
 
@@ -31,7 +31,7 @@ public class PlantController : MonoBehaviour
 	{
 		switch(newState)
 		{
-			case State.OnLand:
+			case State.InGround:
 				{
 					m_growthProgress = 0;
 					m_plateform.SetActive(false);
@@ -68,9 +68,13 @@ public class PlantController : MonoBehaviour
 	public void OnTriggerFilteredEnter(GameObject obj)
 	{
 		m_isSpring = true;
-		if(m_state == State.OnLand)
+		if(m_state == State.InGround) // On fait poussé la plante
 		{
 			HandleNewState(State.GrowthInProgress);
+		}
+		else if (m_state == State.Dying) // On arrête la mort de la plante
+		{
+			HandleNewState(State.GrowthCompleted);
 		}
 	}
 
@@ -80,7 +84,7 @@ public class PlantController : MonoBehaviour
 		{
 			if(m_isSpring)
 			{
-				m_growthProgress += m_growthSpeed * Time.deltaTime;
+				m_growthProgress += m_growthTimer * Time.deltaTime;
 				if(m_growthProgress >= 1)
 				{
 					HandleNewState(State.GrowthCompleted);
@@ -92,7 +96,7 @@ public class PlantController : MonoBehaviour
 	public void OnTriggerFilteredExit(GameObject obj)
 	{
 		m_isSpring = false;
-		if(m_state != State.OnLand && m_state != State.Dying)
+		if(m_state != State.InGround && m_state != State.Dying)
 		{
 			HandleNewState(State.Dying);
 		}
@@ -102,12 +106,15 @@ public class PlantController : MonoBehaviour
 	{
 		yield return new WaitUntil(() => m_state == State.Dying);
 		yield return new WaitForSeconds(m_timeToFade);
-		HandleNewState(State.OnLand);
+		if(m_state == State.Dying)
+		{
+			HandleNewState(State.InGround);
+		}
 	}
 
 	private IEnumerator ReverseGrowth()
 	{
 		yield return new WaitUntil(() => m_state == State.Dying);
-		HandleNewState(State.OnLand);
+		HandleNewState(State.InGround);
 	}
 }
