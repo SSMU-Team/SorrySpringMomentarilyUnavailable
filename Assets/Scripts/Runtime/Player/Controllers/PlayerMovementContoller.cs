@@ -205,6 +205,7 @@ public class PlayerMovementContoller : MonoBehaviour
 			m_jumpPerformCounter = 0;
 		}
 		IsGrounded = false;
+		m_collider.material = m_physicsMat[1];
 	}
 
 	private void ApplyGravity(bool isSlowFall)
