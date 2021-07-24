@@ -28,6 +28,12 @@ public class FairyController : MonoBehaviour
 	[SerializeField] private Ease m_springEase;
 	[SerializeField] private float m_minLevelCharge = 0.05f;
 
+	[Header("End Level")]
+	[Min(0.25f)]
+	[SerializeField] private float m_radiusSpringEnd;
+	[Range(0.001f, 20.0f)]
+	[SerializeField] private float m_durationSpringTransitionEnd;
+
 	private Camera m_main_camera;
 
 	private bool m_springActivated;
@@ -43,6 +49,10 @@ public class FairyController : MonoBehaviour
 	private bool m_isPaused;
 
 	private float m_lastFairyPosY;
+
+	private bool m_canMoveFairy = true;
+
+	private Animation m_animation;
 
 	#region Events
 
@@ -78,6 +88,7 @@ public class FairyController : MonoBehaviour
 		m_actualCharge = 1.0f;
 		m_main_camera = Camera.main;
 		SpringManager.Instance.SetFairy(this);
+		m_animation = GetComponent<Animation>();
 	}
 
 	private void ActivateSpring(bool activate)
@@ -113,7 +124,10 @@ public class FairyController : MonoBehaviour
 
 	private void FixedUpdate()
 	{
-		FairyMovements();
+		if(m_canMoveFairy)
+		{
+			FairyMovements();
+		}
 	}
 
 	private void FairyMovements()
@@ -146,5 +160,21 @@ public class FairyController : MonoBehaviour
 
 			transform.position = new_pos;
 		}
+	}
+
+
+	public void OnFairyEnterAutel()
+	{
+		m_animation.Play();
+		m_canMoveFairy = false;
+		Debug.Log("Fairy");
+	}
+
+	public void OnEndLevel()
+	{
+		m_radiusSpring = m_radiusSpringEnd;
+		m_durationSpringTransition = m_durationSpringTransitionEnd;
+		ActivateSpring(true);
+
 	}
 }

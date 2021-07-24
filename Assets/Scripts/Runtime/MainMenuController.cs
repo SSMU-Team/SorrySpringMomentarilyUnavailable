@@ -11,7 +11,8 @@ using Utility;
 public class MainMenuController : MonoBehaviour
 {
 	[SerializeField] private GameObject m_creditMenu;
-	[SerializeField] private IntEvent m_loadLevel;
+	[SerializeField] private IntEvent m_loadLevel;	
+	[SerializeField] private BoolEvent m_spring;
 
 	private void Start()
 	{
@@ -36,5 +37,6 @@ public class MainMenuController : MonoBehaviour
 	public void BackToMainMenu()
 	{
 		m_creditMenu.SetActive(false);
+		m_spring.Invoke(true);
 	}
 }

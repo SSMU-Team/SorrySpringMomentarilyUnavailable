@@ -8,6 +8,7 @@ using CustomEvents;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+using Utility;
 using Utility.Singleton;
 
 using static UnityEngine.InputSystem.InputAction;
@@ -93,6 +94,7 @@ namespace SceneManagement
 		{
 			m_restartIndex = -1;
 			StartCoroutine(LoadLevel(m_mainMenu));
+			CursorState.SetCursorState(CursorLockMode.None, true);
 		}
 
 		public void OnLoadGame(int level)

@@ -53,6 +53,8 @@ jobs:
       # Checkout
       - name: Checkout repository
         uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
       # Tag
       - name: Tag creation
         uses: phish108/autotag-action@1.1.37

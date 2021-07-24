@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 
 using CustomEvents;
 
@@ -13,6 +14,8 @@ public class PlayerMovementContoller : MonoBehaviour
 	[SerializeField] [Range(5f, 50f)] private float m_rotationSpeed = 10f;
 
 	[Header("Jump and fall", order = 1)]
+	[SerializeField] [Range(0.0f, 5.0f)] private float m_airControl = 1.0f;
+	[SerializeField] private PhysicMaterial[] m_physicsMat;
 	[SerializeField] [Range(0f, 1000f)] private float m_jumpForce;
 	[SerializeField] [Range(1, 30)] private int m_jumpStepsPowerMax;
 	[SerializeField] [Range(0.01f, 1f)] private float m_jumpCooldown;
@@ -31,6 +34,7 @@ public class PlayerMovementContoller : MonoBehaviour
 
 	[Header("Events", order = 4)]
 	[SerializeField] private MoveEvent m_moveEvent;
+	[SerializeField] private SimpleEvent m_jumpEvent;
 
 	public bool IsGrounded { get; private set; } = false;
 	public bool IsMoving => m_inputVelocity.sqrMagnitude > 0.1;
@@ -39,6 +43,7 @@ public class PlayerMovementContoller : MonoBehaviour
 	private SpringPlayerCollisionController m_springCollisionController;
 	private Rigidbody m_rigidbody;
 	private PlayerCameraController m_cameraController;
+	private Collider m_collider;
 
 	private bool IsInSpring => m_springCollisionController.IsInSpring || SpringManager.Instance.SpringMode == SpringSceneMode.Spring;
 
@@ -49,6 +54,7 @@ public class PlayerMovementContoller : MonoBehaviour
 	private int m_jumpPerformCounter = 0;
 	private bool m_canJump = true;
 	private Ray m_rayCheckGround;
+	private Ray m_rayCheckWall;
 	private bool m_isMouseOverOnPlayer = false;
 
 	private bool m_cooldownJump = false;
@@ -58,6 +64,8 @@ public class PlayerMovementContoller : MonoBehaviour
 		m_rigidbody = GetComponent<Rigidbody>();
 		m_springCollisionController = GetComponentInChildren<SpringPlayerCollisionController>();
 		m_cameraController = GetComponent<PlayerCameraController>();
+		m_collider = GetComponent<Collider>();
+		m_collider.material = m_physicsMat[0];
 	}
 
 	private void Update()
@@ -71,9 +79,13 @@ public class PlayerMovementContoller : MonoBehaviour
 
 		CheckGround();
 
-		if(IsMoving)
+		if(IsMoving && IsGrounded)
 		{
 			ApplyMove(1.0f);
+		}
+		else if(IsMoving && CheckWall())
+		{
+			ApplyMove(m_airControl);
 		}
 
 		if((IsGrounded && m_jumpPerformCounter == 0) || m_jumpPerformCounter > 0)
@@ -97,6 +109,7 @@ public class PlayerMovementContoller : MonoBehaviour
 		{
 			FlattenCameraRotation();
 		}
+
 		m_velocity.y = Mathf.Clamp(m_velocity.y, m_minMaxSpeedY.x, m_minMaxSpeedY.y);
 		m_rigidbody.velocity = m_velocity;
 
@@ -108,7 +121,6 @@ public class PlayerMovementContoller : MonoBehaviour
 		move.material = MoveMaterial.Grass;
 		m_moveEvent.Invoke(move);
 	}
-
 	#region Events
 
 	public void OnMove(InputAction.CallbackContext context)
@@ -166,6 +178,7 @@ public class PlayerMovementContoller : MonoBehaviour
 				{
 					m_jumpToPerformThisFrame = true;
 					m_canJump = false;
+					m_jumpEvent.Invoke();
 				}
 			}
 		}
@@ -194,6 +207,7 @@ public class PlayerMovementContoller : MonoBehaviour
 			m_jumpPerformCounter = 0;
 		}
 		IsGrounded = false;
+		m_collider.material = m_physicsMat[1];
 	}
 
 	private void ApplyGravity(bool isSlowFall)
@@ -213,6 +227,7 @@ public class PlayerMovementContoller : MonoBehaviour
 		{
 			if(!old_is_grounded)
 			{
+				m_collider.material = m_physicsMat[1];
 				if(!m_cooldownJump)
 				{
 					StartCoroutine(CooldownJump());
@@ -220,10 +235,23 @@ public class PlayerMovementContoller : MonoBehaviour
 			}
 			else
 			{
+				m_collider.material = m_physicsMat[0];
 				//TODO To delete and correct, watchout at slides.
 				m_canJump = true;
 			}
 		}
+	}
+
+	private bool CheckWall()
+	{
+		Quaternion cam_rotation_flattened = m_cameraController.LookRotationForward();
+		Vector3 direction = cam_rotation_flattened * new Vector3(m_inputVelocity.x, 0, m_inputVelocity.y).normalized;
+		RaycastHit hit;
+		m_rayCheckWall = new Ray(transform.position, direction);
+		//Debug.DrawLine(m_rayCheckWall.origin, m_rayCheckWall.origin + m_rayCheckWall.direction * 10.0f, Color.red);
+		bool wall = Physics.Raycast(m_rayCheckWall, out hit, 1.0f, m_whatIsGround);
+		//Debug.Log(wall);
+		return !wall;
 	}
 
 	private IEnumerator CooldownJump()
@@ -245,18 +273,4 @@ public class PlayerMovementContoller : MonoBehaviour
 		Quaternion new_quaternion = Quaternion.LookRotation(input_cam_space);
 		transform.rotation = Quaternion.Slerp(transform.rotation, new_quaternion, m_rotationSpeed * Time.fixedDeltaTime);
 	}
-
-	//private bool IsMouseOverOnPlayer()
-	//{
-	//	Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-	//	RaycastHit hit;
-	//	if(Physics.Raycast(ray, out hit, 50f, this.gameObject.layer))
-	//	{
-	//		if(hit.transform.gameObject == gameObject)
-	//		{
-	//			return true;
-	//		}
-	//	}
-	//	return false;
-	//}
 }
