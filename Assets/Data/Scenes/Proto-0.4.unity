@@ -320,7 +320,7 @@ GameObject:
   - component: {fileID: 97861961}
   - component: {fileID: 97861960}
   - component: {fileID: 97861959}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Side terrain 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1714,6 +1714,21 @@ PrefabInstance:
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5361843531286072243, guid: 688b328387ff9c546b0490706b9b578b,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 5361843531286072243, guid: 688b328387ff9c546b0490706b9b578b,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 25.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 5361843531286072243, guid: 688b328387ff9c546b0490706b9b578b,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 61.75
+      objectReference: {fileID: 0}
     - target: {fileID: 5539790082346449580, guid: 688b328387ff9c546b0490706b9b578b,
         type: 3}
       propertyPath: m_RootOrder
@@ -2592,7 +2607,7 @@ GameObject:
   - component: {fileID: 1674739253}
   - component: {fileID: 1674739252}
   - component: {fileID: 1674739251}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Side terrain 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
