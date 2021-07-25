@@ -223,7 +223,7 @@ public class PlayerMovementContoller : MonoBehaviour
 		RaycastHit hit;
 		m_rayCheckGround = new Ray(m_groundCheck.position, Vector3.down);
 		IsGrounded = Physics.Raycast(m_rayCheckGround, out hit, m_rayDist, m_whatIsGround);
-		if(IsGrounded)
+		if(IsGrounded && Vector3.Dot(hit.normal, Vector3.up)>0.5f)
 		{
 			if(!old_is_grounded)
 			{
