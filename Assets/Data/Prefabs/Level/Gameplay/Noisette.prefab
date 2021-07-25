@@ -125,7 +125,6 @@ GameObject:
   - component: {fileID: 8376141665657868411}
   - component: {fileID: 6015196063128168649}
   - component: {fileID: 469796459488639563}
-  - component: {fileID: 2514088201699510883}
   m_Layer: 9
   m_Name: Noisette
   m_TagString: Untagged
@@ -176,7 +175,7 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.3, y: 0.3, z: 0.3}
+  m_Size: {x: 0.3, y: 0.55, z: 0.3}
   m_Center: {x: 0, y: 0.3, z: 0}
 --- !u!114 &8376141665657868411
 MonoBehaviour:
@@ -300,34 +299,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_objectFoundName: event:/SoundFX/ObjectFound
---- !u!114 &2514088201699510883
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2266834706121493}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 89b410e3c37bd0649a5253615b3df4a3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_event: {fileID: 11400000, guid: af3a6598ebbe70b41a6f0620dfe23403, type: 2}
-  m_func:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 469796459488639563}
-        m_TargetAssemblyTypeName: CollectableSound, Assembly-CSharp
-        m_MethodName: OnObjectFound
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!1001 &4242173256749420562
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -359,7 +359,7 @@ TerrainCollider:
   m_GameObject: {fileID: 847524963}
   m_Material: {fileID: 13400000, guid: d0dda4c332520764883e2908cacef5de, type: 2}
   m_Enabled: 1
-  m_TerrainData: {fileID: 15600000, guid: 75bfed849957dd845b504cfebf1a3ee9, type: 2}
+  m_TerrainData: {fileID: 15600000, guid: d8c4757b6ffb79a4abb164338a30f8bd, type: 2}
   m_EnableTreeColliders: 1
 --- !u!218 &847524965
 Terrain:
@@ -370,7 +370,7 @@ Terrain:
   m_GameObject: {fileID: 847524963}
   m_Enabled: 1
   serializedVersion: 6
-  m_TerrainData: {fileID: 15600000, guid: 75bfed849957dd845b504cfebf1a3ee9, type: 2}
+  m_TerrainData: {fileID: 15600000, guid: d8c4757b6ffb79a4abb164338a30f8bd, type: 2}
   m_TreeDistance: 5000
   m_TreeBillboardDistance: 50
   m_TreeCrossFadeLength: 5
@@ -581,6 +581,36 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 688b328387ff9c546b0490706b9b578b, type: 3}
+--- !u!114 &1183789173
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4441961385753357409}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 68bb026fafb42b14791938953eaace77, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_NoiseProfile: {fileID: 11400000, guid: 69ce8388f6785dd4c8c39915efece2f4, type: 2}
+  m_PivotOffset: {x: 0, y: 0, z: 0}
+  m_AmplitudeGain: 0
+  m_FrequencyGain: 0
+  mNoiseOffsets: {x: 0, y: 0, z: 0}
+--- !u!65 &2099655888
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 287962865193150897}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 20, y: 20, z: 20}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!4 &55269059377109422
 Transform:
   m_ObjectHideFlags: 0
@@ -606,8 +636,8 @@ GameObject:
   m_Component:
   - component: {fileID: 8357756441725663835}
   - component: {fileID: 4199854811351492262}
-  - component: {fileID: 8782824834309997167}
   - component: {fileID: 3268893544452632141}
+  - component: {fileID: 2099655888}
   m_Layer: 0
   m_Name: Camera_Area_2
   m_TagString: Untagged
@@ -990,23 +1020,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &4047561657358841669
-MonoBehaviour:
-  m_ObjectHideFlags: 3
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4441961385753357409}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 68bb026fafb42b14791938953eaace77, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_NoiseProfile: {fileID: 11400000, guid: 69ce8388f6785dd4c8c39915efece2f4, type: 2}
-  m_PivotOffset: {x: 0, y: 0, z: 0}
-  m_AmplitudeGain: 0
-  m_FrequencyGain: 0
-  mNoiseOffsets: {x: 0, y: 0, z: 0}
 --- !u!114 &4199854811351492262
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1034,7 +1047,7 @@ GameObject:
   - component: {fileID: 2902976114495155256}
   - component: {fileID: 2152972758482926069}
   - component: {fileID: 8415516656214972703}
-  - component: {fileID: 4047561657358841669}
+  - component: {fileID: 1183789173}
   m_Layer: 0
   m_Name: cm
   m_TagString: Untagged
@@ -1513,19 +1526,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!65 &8782824834309997167
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 287962865193150897}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 20, y: 20, z: 20}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &8936218557367283005
 MonoBehaviour:
   m_ObjectHideFlags: 3

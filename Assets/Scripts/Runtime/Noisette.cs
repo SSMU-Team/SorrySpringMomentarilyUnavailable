@@ -13,6 +13,7 @@ public class Noisette : MonoBehaviour
 		if(m_isFirstFoundEffect)
 		{
 			m_itemFound.SendEvent("OnObjectFound");
+			GetComponent<CollectableSound>().OnObjectFound();
 			m_isFirstFoundEffect = false;
 		}
 	}

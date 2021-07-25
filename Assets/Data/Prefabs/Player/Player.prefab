@@ -210,19 +210,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a98c7ab3e2b5c974d96f091174bc2034, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_speedWalk: 200
-  m_sprintMultiplier: 1.2
+  m_speedWalk: 340
+  m_sprintMultiplier: 1
   m_rotationSpeed: 25
   m_airControl: 1
   m_physicsMat:
   - {fileID: 13400000, guid: d0dda4c332520764883e2908cacef5de, type: 2}
   - {fileID: 13400000, guid: 4d49a25c78620f046b2b9d0a744b5972, type: 2}
-  m_jumpForce: 150
-  m_jumpStepsPowerMax: 6
+  m_jumpForce: 350
+  m_jumpStepsPowerMax: 3
   m_jumpCooldown: 0.01
   m_jumpForceSnowMultiplier: 1
-  m_minMaxSpeedY: {x: -20, y: 30}
-  m_gravityMultiplier: 3.2
+  m_minMaxSpeedY: {x: -25, y: 30}
+  m_gravityMultiplier: 6
   m_slowFallMultiplier: 0.25
   m_smoothSpringTransition: 0.5
   m_groundCheck: {fileID: 5515324950706582659}
