@@ -58,6 +58,7 @@ public class PlayerMovementContoller : MonoBehaviour
 	private bool m_isMouseOverOnPlayer = false;
 
 	private bool m_cooldownJump = false;
+	private Move m_move;
 
 	private void Awake()
 	{
@@ -114,12 +115,10 @@ public class PlayerMovementContoller : MonoBehaviour
 		m_rigidbody.velocity = m_velocity;
 
 		//Events
-		Move move;
-		move.is_grounded = IsGrounded;
-		move.speed = !IsMoving ? MoveSpeed.Idle :
+		m_move.is_grounded = IsGrounded;
+		m_move.speed = !IsMoving ? MoveSpeed.Idle :
 				m_movementMultiplier == m_sprintMultiplier ? MoveSpeed.Run : MoveSpeed.Walk;
-		move.material = MoveMaterial.Grass;
-		m_moveEvent.Invoke(move);
+		m_moveEvent.Invoke(m_move);
 	}
 	#region Events
 
@@ -223,8 +222,12 @@ public class PlayerMovementContoller : MonoBehaviour
 		RaycastHit hit;
 		m_rayCheckGround = new Ray(m_groundCheck.position, Vector3.down);
 		IsGrounded = Physics.Raycast(m_rayCheckGround, out hit, m_rayDist, m_whatIsGround);
-		if(IsGrounded && Vector3.Dot(hit.normal, Vector3.up)>0.5f)
+		if(IsGrounded && Vector3.Dot(hit.normal, Vector3.up) > 0.5f)
 		{
+			if(hit.collider.gameObject.tag.Equals("Leaf"))
+				m_move.material = MoveMaterial.Leaf;
+			else
+				m_move.material = MoveMaterial.Grass;
 			if(!old_is_grounded)
 			{
 				m_collider.material = m_physicsMat[1];

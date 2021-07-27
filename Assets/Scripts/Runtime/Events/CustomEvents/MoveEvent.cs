@@ -12,8 +12,8 @@ namespace CustomEvents
 
 	public enum MoveMaterial
 	{
-		Rock,
-		Grass
+		Leaf,
+		Grass,
 	};
 
 	public struct Move

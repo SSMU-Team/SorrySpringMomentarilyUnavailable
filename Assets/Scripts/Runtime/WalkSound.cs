@@ -18,12 +18,13 @@ public class WalkSound : MonoBehaviour
 	private EventInstance m_walk;
 
 	private bool m_isInSpring;
+	private bool m_isOnLeaf;
 
 	void Start()
 	{
 		m_walk = FMODUnity.RuntimeManager.CreateInstance(m_walkName);
 	}
-	
+
 	public void OnSpring(bool isInSpring)
 	{
 		m_isInSpring = isInSpring;
@@ -43,6 +44,6 @@ public class WalkSound : MonoBehaviour
 			m_walk.stop(STOP_MODE.ALLOWFADEOUT);
 		}
 		m_isInSpring |= SpringManager.Instance.SpringMode == SpringSceneMode.Spring;
-		m_walk.setParameterByName(m_springModeWalkName, m_isInSpring ? 0 : 1);
+		m_walk.setParameterByName(m_springModeWalkName, m_isInSpring ? move.material == MoveMaterial.Leaf ? 2 : 1 : 0);
 	}
 }
