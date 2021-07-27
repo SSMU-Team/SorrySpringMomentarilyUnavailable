@@ -21,7 +21,7 @@ EditorBuildSettings:
     path: Assets/Data/Scenes/Sub-scene/Player.unity
     guid: bd7e33993198d9f4d9efdf87eff7a4cc
   - enabled: 0
-    path: Assets/Data/Scenes/Proto-0.3 Old.unity
+    path: Assets/Data/Scenes/Proto-0.4.unity
     guid: 81c72f914eb7aaa4bbd0e92835ad9346
   - enabled: 1
     path: Assets/Data/Scenes/Proto-0.3.unity
