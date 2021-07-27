@@ -47,6 +47,7 @@ GameObject:
   - component: {fileID: 4876882138519591095}
   - component: {fileID: 336741758198276658}
   - component: {fileID: 1920414124936076754}
+  - component: {fileID: 1459969741}
   m_Layer: 0
   m_Name: Plant
   m_TagString: Untagged
@@ -129,7 +130,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6b9d8ab2d12d63e4383758dcb97a9fb6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_growthSpeed: 1.8
+  m_growthTimer: 2
   m_timeToFade: 4.5
   m_state: 0
   m_plateform: {fileID: 5308435104666750583}
@@ -192,6 +193,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1459969741}
+        m_TargetAssemblyTypeName: FMODUnity.StudioEventEmitter, FMODUnity
+        m_MethodName: Play
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_onTriggerFilteredStay:
     m_PersistentCalls:
       m_Calls:
@@ -222,6 +235,41 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1459969741}
+        m_TargetAssemblyTypeName: FMODUnity.StudioEventEmitter, FMODUnity
+        m_MethodName: Stop
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &1459969741
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1180824036657776667}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  Event: event:/SoundFX/GrowthPlant
+  PlayEvent: 0
+  StopEvent: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 0
+  OverrideMaxDistance: 0
 --- !u!1 &3790688223354969670
 GameObject:
   m_ObjectHideFlags: 0
@@ -328,7 +376,7 @@ GameObject:
   - component: {fileID: 5427795668571857748}
   - component: {fileID: 3308724905633959292}
   - component: {fileID: 2554935433752795268}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Cube_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -407,13 +455,13 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2633625439213440199}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Plateform
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2633625439213440199
 Transform:
   m_ObjectHideFlags: 0

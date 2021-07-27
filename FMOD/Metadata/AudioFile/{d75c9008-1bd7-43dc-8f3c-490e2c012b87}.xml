@@ -1,20 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <objects serializationModel="Studio.02.01.00">
-	<object class="AudioFile" id="{3e0b7108-ef85-40df-8df9-92089aed8b61}">
+	<object class="AudioFile" id="{d75c9008-1bd7-43dc-8f3c-490e2c012b87}">
 		<property name="assetPath">
-			<value>Thème principal LOOP v4.wav</value>
-		</property>
-		<property name="isStreaming">
-			<value>true</value>
+			<value>Personnage/Déplacement esprit saison 6.wav</value>
 		</property>
 		<property name="frequencyInKHz">
-			<value>48</value>
+			<value>44.0999985</value>
 		</property>
 		<property name="channelCount">
 			<value>2</value>
 		</property>
 		<property name="length">
-			<value>117</value>
+			<value>4.1250113378684805</value>
 		</property>
 		<relationship name="masterAssetFolder">
 			<destination>{2310fe71-57a7-4c0b-a9ff-9d953e31aeb7}</destination>

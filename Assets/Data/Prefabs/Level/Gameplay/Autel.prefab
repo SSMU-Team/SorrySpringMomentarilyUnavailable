@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 3312414651563681734}
   - component: {fileID: 4189302689716243710}
   - component: {fileID: 6870421293525652089}
+  - component: {fileID: 1665022162}
   m_Layer: 9
   m_Name: Autel
   m_TagString: Untagged
@@ -27,7 +28,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4693534643607572745}
-  m_LocalRotation: {x: -0, y: -0.54102534, z: -0, w: 0.84100634}
+  m_LocalRotation: {x: 0, y: -0.54102594, z: 0, w: 0.841006}
   m_LocalPosition: {x: -1.75, y: -0.58776665, z: -1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -88,8 +89,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 795b2fbe797bc4e47b9728bd1213b517, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_autelVictoryName: event:/SoundFX/ObjectFound
-  m_autelWrongName: event:/SoundFX/ObjectFound
+  m_autelVictoryName: event:/Menus/Validation
+  m_autelWrongName: event:/SoundFX/AutelAngry
 --- !u!114 &6870421293525652089
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -104,6 +105,29 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_oakNut: {fileID: 11400000, guid: 2b44af204f2894c49a10e5284de07479, type: 2}
   m_autelEvent: {fileID: 11400000, guid: 0e4abd6988862cc48af23f67ce143061, type: 2}
+--- !u!114 &1665022162
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4693534643607572745}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  Event: event:/SoundFX/AutelAura
+  PlayEvent: 1
+  StopEvent: 2
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 0
+  OverrideMaxDistance: 10
 --- !u!1001 &4218284100091461943
 PrefabInstance:
   m_ObjectHideFlags: 0

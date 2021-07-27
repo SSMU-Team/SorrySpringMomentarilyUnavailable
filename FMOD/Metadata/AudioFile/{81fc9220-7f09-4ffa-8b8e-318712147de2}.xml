@@ -1,11 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <objects serializationModel="Studio.02.01.00">
-	<object class="AudioFile" id="{e6c6b871-2329-4886-a78b-574070cd0dee}">
+	<object class="AudioFile" id="{81fc9220-7f09-4ffa-8b8e-318712147de2}">
 		<property name="assetPath">
-			<value>the-snow-queen-by-kevin-macleod-from-filmmusic-io.mp3</value>
-		</property>
-		<property name="isStreaming">
-			<value>true</value>
+			<value>Personnage/Saut/Saut neige 3.wav</value>
 		</property>
 		<property name="frequencyInKHz">
 			<value>44.0999985</value>
@@ -14,7 +11,7 @@
 			<value>2</value>
 		</property>
 		<property name="length">
-			<value>220.05551020408163</value>
+			<value>0.61562358276643991</value>
 		</property>
 		<relationship name="masterAssetFolder">
 			<destination>{2310fe71-57a7-4c0b-a9ff-9d953e31aeb7}</destination>

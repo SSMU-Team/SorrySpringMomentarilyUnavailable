@@ -15,6 +15,7 @@ public class AutelSound : MonoBehaviour
 
 	private EventInstance m_autelVictory;
 	private EventInstance m_autelWrong;
+	private FMODUnity.StudioEventEmitter m_auraSound;
 
 	private void OnEnable()
 	{
@@ -32,6 +33,7 @@ public class AutelSound : MonoBehaviour
 	{
 		if(isFull)
 		{
+			m_auraSound.Stop();
 			m_autelVictory.start();
 		}
 		else
