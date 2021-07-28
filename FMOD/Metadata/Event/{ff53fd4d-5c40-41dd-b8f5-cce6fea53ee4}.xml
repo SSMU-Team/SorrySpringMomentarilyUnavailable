@@ -130,7 +130,7 @@
 			<value>0</value>
 		</property>
 		<property name="length">
-			<value>360</value>
+			<value>117</value>
 		</property>
 		<relationship name="timeline">
 			<destination>{95b4f882-f425-4630-9b60-4bd5815137f4}</destination>
