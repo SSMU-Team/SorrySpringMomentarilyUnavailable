@@ -257,7 +257,7 @@ PrefabInstance:
     - target: {fileID: 2359823024480693584, guid: fbd32755002bdad4796781d14606d551,
         type: 3}
       propertyPath: m_springMode
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2359823024480693587, guid: fbd32755002bdad4796781d14606d551,
         type: 3}

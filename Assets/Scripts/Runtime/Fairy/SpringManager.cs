@@ -53,6 +53,7 @@ public class SpringManager : SingletonBehaviour<SpringManager>
 		m_shaderid_hotradius = Shader.PropertyToID("_HotPointRadius");
 		m_shaderid_softradius = Shader.PropertyToID("_HotPointSoft");
 		m_shaderid_modespring = Shader.PropertyToID("_SpringMode");
+		m_springMode = 0;
 	}
 
 	[ContextMenu("Reset mode")]
