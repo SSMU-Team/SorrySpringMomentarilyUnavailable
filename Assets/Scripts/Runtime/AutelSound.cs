@@ -17,19 +17,19 @@ public class AutelSound : MonoBehaviour
 	private EventInstance m_autelWrong;
 	private FMODUnity.StudioEventEmitter m_auraSound;
 
-	private void OnEnable()
+	void OnStart()
 	{
 		m_autelVictory = FMODUnity.RuntimeManager.CreateInstance(m_autelVictoryName);
 		m_autelWrong = FMODUnity.RuntimeManager.CreateInstance(m_autelWrongName);
 	}
 
-	private void OnDisable()
+	void OnDestroy()
 	{
 		m_autelVictory.release();
 		m_autelWrong.release();
 	}
 
-	public void OnInteraction(bool isFull)
+	public void OnAutelActive(bool isFull)
 	{
 		if(isFull)
 		{

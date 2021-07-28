@@ -13,6 +13,7 @@ public class FairyController : MonoBehaviour
 	[SerializeField] private LayerMask m_layerMask;
 	[SerializeField] private float m_maxDistance;
 	[SerializeField] private float m_positionOffset;
+	[SerializeField] private FMODUnity.StudioEventEmitter m_moveSound;
 
 	[Header("Speed")]
 	[Range(0.001f, 5.0f)]
@@ -27,6 +28,8 @@ public class FairyController : MonoBehaviour
 	[SerializeField] private float m_durationSpringTransition;
 	[SerializeField] private Ease m_springEase;
 	[SerializeField] private float m_minLevelCharge = 0.05f;
+	[SerializeField] private FMODUnity.StudioEventEmitter[] m_soundsActivation;
+
 
 	[Header("End Level")]
 	[Min(0.25f)]
@@ -63,6 +66,10 @@ public class FairyController : MonoBehaviour
 
 	public void OnFairyPosition(CallbackContext ctx)
 	{
+		if(ctx.started && !m_moveSound.IsPlaying())
+		{
+			m_moveSound.Play();
+		}
 		if(ctx.performed)
 		{
 			m_mouse_pos = ctx.ReadValue<Vector2>();
@@ -105,6 +112,7 @@ public class FairyController : MonoBehaviour
 			.Play()
 			;
 			m_springActivated = true;
+			m_soundsActivation[0].Play();
 
 		}
 		else if(m_springActivated && !activate)
@@ -119,6 +127,7 @@ public class FairyController : MonoBehaviour
 			.Play()
 			;
 			m_springActivated = false;
+			m_soundsActivation[1].Play();
 		}
 	}
 

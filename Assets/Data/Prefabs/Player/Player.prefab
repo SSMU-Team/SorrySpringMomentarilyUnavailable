@@ -33,6 +33,8 @@ GameObject:
   - component: {fileID: 6245690380833156832}
   - component: {fileID: 95572679}
   - component: {fileID: 1168758066}
+  - component: {fileID: 160306273}
+  - component: {fileID: 160306274}
   m_Layer: 7
   m_Name: Player
   m_TagString: Untagged
@@ -233,6 +235,7 @@ MonoBehaviour:
   m_rayDist: 0.3
   m_moveEvent: {fileID: 11400000, guid: cddb9d3dd3c72744a825dc4171f60be5, type: 2}
   m_jumpEvent: {fileID: 11400000, guid: 8edf4f0c9803ded49a220f6f39b6390c, type: 2}
+  m_landEvent: {fileID: 11400000, guid: 5e8acf0f1d6db0d4d8cd7708b16e40a3, type: 2}
 --- !u!114 &5529392882851554763
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -302,6 +305,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_walkName: event:/Player/Walk
+  m_jumpName: event:/Player/Jump
+  m_landName: event:/Player/Land
   m_springModeWalkName: SpringMode
 --- !u!114 &9217973295132542124
 MonoBehaviour:
@@ -385,6 +390,62 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   attenuationObject: {fileID: 0}
   ListenerNumber: -1
+--- !u!114 &160306273
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1405048126198997289}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 89b410e3c37bd0649a5253615b3df4a3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_event: {fileID: 11400000, guid: 5e8acf0f1d6db0d4d8cd7708b16e40a3, type: 2}
+  m_func:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 8946392899416082044}
+        m_TargetAssemblyTypeName: MovementsSound, Assembly-CSharp
+        m_MethodName: OnLand
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &160306274
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1405048126198997289}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 89b410e3c37bd0649a5253615b3df4a3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_event: {fileID: 11400000, guid: 8edf4f0c9803ded49a220f6f39b6390c, type: 2}
+  m_func:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 8946392899416082044}
+        m_TargetAssemblyTypeName: MovementsSound, Assembly-CSharp
+        m_MethodName: OnJump
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &3920746144148423531
 GameObject:
   m_ObjectHideFlags: 0

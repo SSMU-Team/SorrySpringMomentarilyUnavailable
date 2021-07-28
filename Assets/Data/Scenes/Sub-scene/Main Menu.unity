@@ -385,41 +385,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 3917754884108876066, guid: 2078407a0eb3e7d44a21ee8150d93af6,
-        type: 3}
-      propertyPath: m_text
-      value: '<u>Game Design:</u>
-
-        Fae.exe
-
-
-        <u>Sound Design :</u>
-
-        Laurent
-        Vang
-
-        David Escudero
-
-
-        <u>Graphismes :</u>
-
-        Cleme
-        Colas
-
-        Lucy Choquet
-
-        Alyd Asmar
-
-
-        <u>Programmation
-        :</u>
-
-        Marc Cerutti
-
-        Gabriel Dubois
-
-        Theo Lopez'
-      objectReference: {fileID: 0}
     - target: {fileID: 7762978115902896142, guid: 2078407a0eb3e7d44a21ee8150d93af6,
         type: 3}
       propertyPath: m_Pivot.x

@@ -35,6 +35,7 @@ public class PlayerMovementContoller : MonoBehaviour
 	[Header("Events", order = 4)]
 	[SerializeField] private MoveEvent m_moveEvent;
 	[SerializeField] private SimpleEvent m_jumpEvent;
+	[SerializeField] private SimpleEvent m_landEvent;
 
 	public bool IsGrounded { get; private set; } = false;
 	public bool IsMoving => m_inputVelocity.sqrMagnitude > 0.1;
@@ -231,6 +232,7 @@ public class PlayerMovementContoller : MonoBehaviour
 			if(!old_is_grounded)
 			{
 				m_collider.material = m_physicsMat[1];
+				m_landEvent.Invoke();
 				if(!m_cooldownJump)
 				{
 					StartCoroutine(CooldownJump());

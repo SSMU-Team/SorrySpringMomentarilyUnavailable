@@ -130,6 +130,15 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 656792990, guid: 2fd243e1972c2a04eb9f632dfd847672, type: 3}
+      propertyPath: StopEvent
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4319813600919072343, guid: 2fd243e1972c2a04eb9f632dfd847672,
+        type: 3}
+      propertyPath: StopEvent
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 6718735751542273628, guid: 2fd243e1972c2a04eb9f632dfd847672,
         type: 3}
       propertyPath: m_RootOrder
@@ -189,6 +198,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Fairy
+      objectReference: {fileID: 0}
+    - target: {fileID: 8661406844841099127, guid: 2fd243e1972c2a04eb9f632dfd847672,
+        type: 3}
+      propertyPath: StopEvent
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2fd243e1972c2a04eb9f632dfd847672, type: 3}
@@ -299,17 +313,17 @@ PrefabInstance:
     - target: {fileID: 4797086084603957253, guid: dd52583dec81b1d41b75fafe03c6f789,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 39.771732
+      value: 39.13673
       objectReference: {fileID: 0}
     - target: {fileID: 4797086084603957253, guid: dd52583dec81b1d41b75fafe03c6f789,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 11.141149
+      value: 11.145148
       objectReference: {fileID: 0}
     - target: {fileID: 4797086084603957253, guid: dd52583dec81b1d41b75fafe03c6f789,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 86.93581
+      value: 86.22581
       objectReference: {fileID: 0}
     - target: {fileID: 4797086084603957253, guid: dd52583dec81b1d41b75fafe03c6f789,
         type: 3}
