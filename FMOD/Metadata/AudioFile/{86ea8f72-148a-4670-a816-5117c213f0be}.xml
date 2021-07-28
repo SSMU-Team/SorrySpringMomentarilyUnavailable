@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.01.00">
+	<object class="AudioFile" id="{86ea8f72-148a-4670-a816-5117c213f0be}">
+		<property name="assetPath">
+			<value>Environnement/Aura Autel LOOP.wav</value>
+		</property>
+		<property name="isStreaming">
+			<value>true</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>35</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{2310fe71-57a7-4c0b-a9ff-9d953e31aeb7}</destination>
+		</relationship>
+	</object>
+</objects>

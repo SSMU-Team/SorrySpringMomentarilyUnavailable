@@ -80,6 +80,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: Barriere_2
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 4b45d4b47478e4d45b99130ab10db3fd,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 6159819195323411483, guid: 4b45d4b47478e4d45b99130ab10db3fd,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4b45d4b47478e4d45b99130ab10db3fd, type: 3}
 --- !u!1 &8126679192477855361 stripped

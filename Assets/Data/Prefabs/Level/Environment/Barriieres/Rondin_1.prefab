@@ -80,6 +80,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: Rondin_1
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 6b7d3248922c463468601292f31d183c,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 6159819195323411483, guid: 6b7d3248922c463468601292f31d183c,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6b7d3248922c463468601292f31d183c, type: 3}
 --- !u!1 &4083459502905925375 stripped

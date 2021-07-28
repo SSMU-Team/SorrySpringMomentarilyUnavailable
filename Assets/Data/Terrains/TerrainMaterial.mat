@@ -273,10 +273,10 @@ Material:
     - _SmoothnessRemapMax: 1
     - _SmoothnessRemapMin: 0
     - _SnowHeight: 0.2
-    - _SnowHeightColor: 0.53
+    - _SnowHeightColor: 0.6
     - _SnowHeightForce: 0.3
     - _SnowNoiseSaturation: 8.29
-    - _SnowSoftEdgeColor: 1
+    - _SnowSoftEdgeColor: 0.8
     - _SnowSoftHeight: 0.1
     - _SpecularAAScreenSpaceVariance: 0.1
     - _SpecularAAThreshold: 0.2
@@ -332,7 +332,7 @@ Material:
     - _IridescenceThicknessRemap: {r: 0, g: 1, b: 0, a: 0}
     - _Offset: {r: 0, g: 0, b: 0, a: 0}
     - _OutlineColor: {r: 0, g: 0, b: 0, a: 1}
-    - _SnowColor: {r: 0.7028302, g: 0.9564461, b: 1, a: 0}
+    - _SnowColor: {r: 0.7019608, g: 1, b: 0.8397805, a: 0}
     - _SnowDirection: {r: 0, g: 1, b: 0, a: 0}
     - _SpecularColor: {r: 1, g: 1, b: 1, a: 1}
     - _Splat0: {r: 1, g: 1, b: 1, a: 0}

@@ -39,6 +39,14 @@ Material:
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
+    - Texture2D_1:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - Texture2D_195d61fda197486d8505d87c3e4925fe:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - Texture2D_57C0B680:
         m_Texture: {fileID: 10309, guid: 0000000000000000f000000000000000, type: 0}
         m_Scale: {x: 1, y: 1}
@@ -159,7 +167,9 @@ Material:
     - Vector1_18BCAB3: 2
     - Vector1_1B253EBD: 2
     - Vector1_1a6d32dd57da4124b2fce2b1c800b7ae: 0.5
+    - Vector1_1d54154d93a04d5a96124407953da017: 0
     - Vector1_242ADF9B: 5
+    - Vector1_4365105d98a64e339f1f660fc6b8b119: 0
     - Vector1_57fa3220c6424bde8ee9b98898b10659: 0
     - Vector1_75A43468: 0.2
     - Vector1_76053BB3: 4
@@ -240,6 +250,7 @@ Material:
     - _LinkDetailsWithBase: 1
     - _MaterialID: 1
     - _Metallic: 0
+    - _MetallicStrength: 0
     - _Noise1: 2
     - _Noise2: 80
     - _NormalMapSpace: 0
@@ -262,6 +273,7 @@ Material:
     - _Smoothness: 0.5
     - _SmoothnessRemapMax: 1
     - _SmoothnessRemapMin: 0
+    - _SmoothnessStrength: 0
     - _SnowHeightColor: 0
     - _SnowNoiseSaturation: 5
     - _SnowSoftEdgeColor: 1
@@ -306,6 +318,7 @@ Material:
     m_Colors:
     - Color_6fe6a587400d422da79beb9c9e6a282d: {r: 1, g: 1, b: 1, a: 1}
     - Color_C1A1BFCF: {r: 1, g: 1, b: 1, a: 1}
+    - Color_f4252cb5bea948b9b7467f41241b8a70: {r: 0, g: 0, b: 0, a: 0}
     - Vector2_8e7625c82c014f669b1dfeeff04c8c15: {r: 1, g: 1, b: 0, a: 0}
     - Vector2_cacf0ffc44dd4d86b238be361fe05660: {r: 0, g: 0, b: 0, a: 0}
     - Vector3_14FB86B7: {r: 0, g: 1, b: 0, a: 0}

@@ -214,19 +214,20 @@ MonoBehaviour:
 
     <u>Graphismes :</u>
 
+    Cleme Colas
+
     Lucy
+    Choquet
 
-    Alid
-
-    Clem
+    Alyd Asmar
 
 
-    <u>Programmation
-    :</u>
+    <u>Programmation :</u>
 
     Marc Cerutti
 
-    Gabriel Dubois
+    Gabriel
+    Dubois
 
     Theo Lopez'
   m_isRightToLeft: 0
@@ -384,6 +385,7 @@ GameObject:
   - component: {fileID: 7762978114553460887}
   - component: {fileID: 7762978114553460886}
   - component: {fileID: 7762978114553460889}
+  - component: {fileID: 1561923409}
   m_Layer: 5
   m_Name: 'Button Play '
   m_TagString: Untagged
@@ -471,9 +473,9 @@ MonoBehaviour:
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
-    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_HighlightedColor: {r: 0.6981132, g: 0.6981132, b: 0.6981132, a: 1}
+    m_PressedColor: {r: 0.5, g: 0.8999984, b: 1, a: 1}
+    m_SelectedColor: {r: 0.7, g: 0.7, b: 0.7, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
@@ -505,6 +507,22 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &1561923409
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7762978114553460891}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5651ba839780e434089ca39ad605b759, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_isButtonBack: 0
+  m_hoverName: event:/Menus/Hover
+  m_validationName: event:/Menus/Validation
+  m_backName: event:/Menus/Back
 --- !u!1 &7762978114910526614
 GameObject:
   m_ObjectHideFlags: 0
@@ -653,6 +671,7 @@ GameObject:
   - component: {fileID: 7762978114975602209}
   - component: {fileID: 7762978114975602208}
   - component: {fileID: 7762978114975602211}
+  - component: {fileID: 8621593684644469173}
   m_Layer: 5
   m_Name: Button Credit
   m_TagString: Untagged
@@ -673,7 +692,7 @@ RectTransform:
   m_Children:
   - {fileID: 7762978115891137288}
   m_Father: {fileID: 7762978116125530342}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
@@ -740,9 +759,9 @@ MonoBehaviour:
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
-    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_HighlightedColor: {r: 0.6981132, g: 0.6981132, b: 0.6981132, a: 1}
+    m_PressedColor: {r: 0.5, g: 0.8999984, b: 1, a: 1}
+    m_SelectedColor: {r: 0.7, g: 0.7, b: 0.7, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
@@ -774,6 +793,22 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &8621593684644469173
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7762978114975602213}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5651ba839780e434089ca39ad605b759, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_isButtonBack: 0
+  m_hoverName: event:/Menus/Hover
+  m_validationName: event:/Menus/Validation
+  m_backName: event:/Menus/Back
 --- !u!1 &7762978115301805566
 GameObject:
   m_ObjectHideFlags: 0
@@ -899,6 +934,7 @@ GameObject:
   - component: {fileID: 7762978115394545665}
   - component: {fileID: 7762978115394545664}
   - component: {fileID: 7762978115394545667}
+  - component: {fileID: 207180218}
   m_Layer: 5
   m_Name: Button Quit
   m_TagString: Untagged
@@ -919,7 +955,7 @@ RectTransform:
   m_Children:
   - {fileID: 7762978116118647312}
   m_Father: {fileID: 7762978116125530342}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
@@ -986,9 +1022,9 @@ MonoBehaviour:
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
-    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_HighlightedColor: {r: 0.6981132, g: 0.6981132, b: 0.6981132, a: 1}
+    m_PressedColor: {r: 0.5, g: 0.8999984, b: 1, a: 1}
+    m_SelectedColor: {r: 0.7, g: 0.7, b: 0.7, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
@@ -1020,6 +1056,22 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &207180218
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7762978115394545669}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5651ba839780e434089ca39ad605b759, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_isButtonBack: 1
+  m_hoverName: event:/Menus/Hover
+  m_validationName: event:/Menus/Validation
+  m_backName: event:/Menus/Back
 --- !u!1 &7762978115873507182
 GameObject:
   m_ObjectHideFlags: 0
@@ -1575,8 +1627,8 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 7762978114553460888}
-  - {fileID: 7762978115394545666}
   - {fileID: 7762978114975602210}
+  - {fileID: 7762978115394545666}
   m_Father: {fileID: 7762978115902896142}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1597,6 +1649,7 @@ GameObject:
   - component: {fileID: 7762978116138308859}
   - component: {fileID: 7762978116138308858}
   - component: {fileID: 7762978116138308861}
+  - component: {fileID: 1115167979}
   m_Layer: 5
   m_Name: Button Back
   m_TagString: Untagged
@@ -1684,9 +1737,9 @@ MonoBehaviour:
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
-    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_HighlightedColor: {r: 0.6981132, g: 0.6981132, b: 0.6981132, a: 1}
+    m_PressedColor: {r: 0.5, g: 0.8999984, b: 1, a: 1}
+    m_SelectedColor: {r: 0.7, g: 0.7, b: 0.7, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
@@ -1718,3 +1771,19 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &1115167979
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7762978116138308863}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5651ba839780e434089ca39ad605b759, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_isButtonBack: 1
+  m_hoverName: event:/Menus/Hover
+  m_validationName: event:/Menus/Validation
+  m_backName: event:/Menus/Back

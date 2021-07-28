@@ -30,8 +30,11 @@ public class SoundThemeManager : MonoBehaviour
 		m_themeSpring.start();
 	}
 
-	private void OnDisable()
+	private void OnDestroy()
 	{
+		m_themeSpring.stop(STOP_MODE.ALLOWFADEOUT);
+		m_themeWinter.stop(STOP_MODE.ALLOWFADEOUT);
+		m_themeVictory.stop(STOP_MODE.ALLOWFADEOUT);
 		m_themeSpring.release();
 		m_themeWinter.release();
 		m_themeVictory.release();

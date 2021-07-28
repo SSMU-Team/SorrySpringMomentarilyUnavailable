@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.01.00">
+	<object class="AudioFile" id="{18556807-7790-4d53-9861-f6d607c9abad}">
+		<property name="assetPath">
+			<value>Theme/Thème Hiver v3.wav</value>
+		</property>
+		<property name="isStreaming">
+			<value>true</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>48</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>122.63737500000001</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{2310fe71-57a7-4c0b-a9ff-9d953e31aeb7}</destination>
+		</relationship>
+	</object>
+</objects>
