@@ -23,9 +23,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Data/Scenes/Proto-0.4.unity
     guid: 81c72f914eb7aaa4bbd0e92835ad9346
-  - enabled: 1
-    path: 
-    guid: 2853e60777966db4ab7e9351e3e158d8
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: f93693ccac39f6742b078dfedac1e94a,
       type: 2}

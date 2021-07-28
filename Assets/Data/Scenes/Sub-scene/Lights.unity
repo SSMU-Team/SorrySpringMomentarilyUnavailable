@@ -324,26 +324,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 98.664
       objectReference: {fileID: 0}
-    - target: {fileID: 1670263669677827709, guid: 6981c576538edbf4caf96c40f592cf49,
-        type: 3}
-      propertyPath: m_BoundingSphereOverride.w
-      value: 7.1939176e+31
-      objectReference: {fileID: 0}
-    - target: {fileID: 1670263669677827709, guid: 6981c576538edbf4caf96c40f592cf49,
-        type: 3}
-      propertyPath: m_BoundingSphereOverride.x
-      value: 4.71e-43
-      objectReference: {fileID: 0}
-    - target: {fileID: 1670263669677827709, guid: 6981c576538edbf4caf96c40f592cf49,
-        type: 3}
-      propertyPath: m_BoundingSphereOverride.y
-      value: 1.8357361e+14
-      objectReference: {fileID: 0}
-    - target: {fileID: 1670263669677827709, guid: 6981c576538edbf4caf96c40f592cf49,
-        type: 3}
-      propertyPath: m_BoundingSphereOverride.z
-      value: 4.71e-43
-      objectReference: {fileID: 0}
     - target: {fileID: 1670263669677827711, guid: 6981c576538edbf4caf96c40f592cf49,
         type: 3}
       propertyPath: m_Name

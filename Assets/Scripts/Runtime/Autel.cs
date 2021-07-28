@@ -9,7 +9,6 @@ public class Autel : MonoBehaviour, IInteractable
 {
 	[SerializeField] private ScriptableCollectable m_oakNut;
 	[SerializeField] private BoolEvent m_autelEvent;
-	//[SerializeField] private SimpleEvent m_loadMainMenu;
 
 
 	public void OnInteraction()

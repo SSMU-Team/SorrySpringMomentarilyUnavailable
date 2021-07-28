@@ -10,8 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 5361843531286072243}
   - component: {fileID: 8559625071367176008}
-  - component: {fileID: 3312414651563681734}
   - component: {fileID: 4189302689716243710}
+  - component: {fileID: 3312414651563681734}
   - component: {fileID: 6870421293525652089}
   - component: {fileID: 1665022162}
   m_Layer: 9
@@ -49,6 +49,21 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 2.6, y: 2, z: 4.1}
   m_Center: {x: -0.14, y: 1.1, z: -0.36}
+--- !u!114 &4189302689716243710
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4693534643607572745}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 795b2fbe797bc4e47b9728bd1213b517, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_autelVictoryName: event:/Menus/Validation
+  m_autelWrongName: event:/SoundFX/AutelAngry
+  m_auraSound: {fileID: 1665022162}
 --- !u!114 &3312414651563681734
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -67,7 +82,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 4189302689716243710}
         m_TargetAssemblyTypeName: AutelSound, Assembly-CSharp
-        m_MethodName: OnInteraction
+        m_MethodName: OnAutelActive
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -75,22 +90,8 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
---- !u!114 &4189302689716243710
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4693534643607572745}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 795b2fbe797bc4e47b9728bd1213b517, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_autelVictoryName: event:/Menus/Validation
-  m_autelWrongName: event:/SoundFX/AutelAngry
+          m_BoolArgument: 1
+        m_CallState: 1
 --- !u!114 &6870421293525652089
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -127,7 +128,7 @@ MonoBehaviour:
   Params: []
   OverrideAttenuation: 0
   OverrideMinDistance: 0
-  OverrideMaxDistance: 10
+  OverrideMaxDistance: 0
 --- !u!1001 &4218284100091461943
 PrefabInstance:
   m_ObjectHideFlags: 0

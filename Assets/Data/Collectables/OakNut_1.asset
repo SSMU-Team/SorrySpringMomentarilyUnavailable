@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: OakNut_1
   m_EditorClassIdentifier: 
   m_number: 0
-  m_numberMax: 5
+  m_numberMax: 12
   can_be_reset: 1
   m_collectableEvent: {fileID: 11400000, guid: e61da4337d3931f4c866c10db09a7f9e, type: 2}

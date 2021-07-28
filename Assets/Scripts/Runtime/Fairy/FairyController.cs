@@ -176,7 +176,6 @@ public class FairyController : MonoBehaviour
 	{
 		m_animation.Play();
 		m_canMoveFairy = false;
-		Debug.Log("Fairy");
 	}
 
 	public void OnEndLevel()

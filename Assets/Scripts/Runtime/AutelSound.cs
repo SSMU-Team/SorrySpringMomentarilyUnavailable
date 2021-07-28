@@ -15,9 +15,9 @@ public class AutelSound : MonoBehaviour
 
 	private EventInstance m_autelVictory;
 	private EventInstance m_autelWrong;
-	private FMODUnity.StudioEventEmitter m_auraSound;
+	[SerializeField] private FMODUnity.StudioEventEmitter m_auraSound;
 
-	void OnStart()
+	public void Start()
 	{
 		m_autelVictory = FMODUnity.RuntimeManager.CreateInstance(m_autelVictoryName);
 		m_autelWrong = FMODUnity.RuntimeManager.CreateInstance(m_autelWrongName);
